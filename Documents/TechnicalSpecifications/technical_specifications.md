@@ -26,6 +26,10 @@
 | Frogger  |             |        |
 | NandLand |             |        |
 | Verilog  |             |        |
+| SystemVerilog |        |        |
+| testbenches |           |        |
+| IDE       |             |        |
+| syntax highlighting |   |        |
 
 
 ### 2. Document Purpose
@@ -70,6 +74,7 @@ The NandLand GO Board features the following components:
 ##### ➭ <ins> FPGA </ins>
 **Reference:** ICE40HX1K-VQ100
 **Number:** 1
+**Total memory bits:** 65536
 
 The FPGA chip is the core component of the board, responsible for executing the Verilog code and controlling the hardware components. The FPGA chip is programmable, allowing users to develop custom digital circuits and applications.
 
@@ -117,24 +122,104 @@ The board features a PMOD connector that can be used to connect external modules
 
 // TODO: add photo of the PMOD connector
 
-#### B) Usage
+#### B) Setup
 To use the board a configuration of the computer is required. The tutorial can be found [here](https://nandland.com/set-up-apio-fpga-build-and-program/).
 
-### 2. Verilog
+### 2. Verilog and SystemVerilog
 
 #### A) Language
 
+For this project, the team will use Verilog to develop the game logic and implement the features of the Frogger game. We will also use SystemVerilog to create testbenches and verify the functionality of the Verilog code.
+
+##### ➭ <ins> Verilog </ins>
+Verilog is a hardware description language used to model electronic systems. It is commonly used in digital circuit design and FPGA programming to describe the behavior of hardware components and circuits. Verilog is a powerful and versatile language that allows users to create complex digital circuits and applications.
+
+Here is an example of a simple Verilog code that implements a basic logic gate:
+
+```verilog
+module and_gate(input a, input b, output y);
+    assign y = a & b;
+endmodule
+```
+
+More details about Verilog can be found [here](https://www.nandland.com/verilog/tutorials/tutorial-introduction-to-verilog-for-beginners.html).
+
+##### ➭ <ins> SystemVerilog </ins>
+SystemVerilog is an extension of Verilog that adds new features and capabilities to the language. It includes enhancements such as object-oriented programming, constrained random testing, and assertions, making it a powerful tool for developing complex digital systems.
+
+Here is an example of a simple SystemVerilog code that implements a basic counter:
+
+``` verilog
+module counter;
+    int count = 0;
+
+    initial begin
+        while (1) begin
+            $display("Count: %d", count);
+            count = count + 1;
+            #1;
+        end
+    end
+endmodule
+```
+
 #### B) Working Environment
+To write and test Verilog code, users can use a text editor or an integrated development environment (IDE) such as Visual Studio Code, Xilinx Vivado, or Quartus Prime. These tools provide features such as syntax highlighting, code completion, and debugging capabilities to help users write and test Verilog code efficiently.
 
 ## III. Technical Specifications
 
-### 1.Naming Conventions
+### 1. Naming Conventions and file structure
 
-#### A) Folders
+#### A) Files and Directories naming conventions
+The project will follow the following naming conventions for files and directories:
 
-#### B) Files
+##### ➭ <ins> Files </ins>
 
-#### C) Constants and Variables
+- **Verilog files:** Verilog files will be named using lowercase letters and underscores to separate words. For example, `game_logic.v`, `player_module.v`.
+- **Testbench files:** Testbench files will be named using the same convention as Verilog files, with the addition of `_tb` at the end. For example, `game_logic_tb.v`, `player_module_tb.v`.
+- **Documentation files:** Documentation files will be named using lowercase letters and underscores to separate words. For example, `technical_specifications.md`, `functional_specifications.md`.
+
+##### ➭ <ins> Directories </ins>
+
+Every directory of the project will be named using lowercase letters and uppercase for the first letter of each word. For example, `Source`, `Testbench`, `Documentation`.
+
+#### B) Variables naming conventions
+The project will follow the following naming conventions for variables:
+
+- **Module names:** Module names will be named using lowercase letters and underscores to separate words. For example, `game_logic`, `player_module`.
+- **Constants:** Constants will be named using uppercase letters and underscores to separate words. For example, `SCREEN_WIDTH`, `PLAYER_LIVES`.
+- **Variables:** Variables will be named using lowercase letters and underscores to separate words. For example, `player_position`, `enemy_speed`.
+- **Wires names:** Wires names will start by a `w_` and named using lowercase letters and underscores to separate words. For example, `w_player_position`, `w_enemy_speed`.
+- **Input ports:** Input ports will start by `i_` and named using lowercase letters and underscores to separate words. For example, `i_player_position`, `i_enemy_speed`.
+- **Output ports:** Output ports will start by `o_` and named using lowercase letters and underscores to separate words. For example, `o_player_position`, `o_enemy_speed`.
+
+#### C) File structure
+The project will follow the following file structure:
+
+```
+Frogger
+│
+├── Source
+│   ├── game_logic.v
+│   ├── player_module.v
+│   ├── enemy_module.v
+│   ├── ...
+│
+├── Testbench
+│   ├── game_logic_tb.sv
+│   ├── player_module_tb.sv
+│   ├── enemy_module_tb.sv
+│   ├── ...
+│
+├── Documents
+│   ├── TechnicalSpecifications
+│   │   ├── technical_specifications.md
+│   │   ├── ...
+│   ├── FunctionalSpecifications
+│   │   ├── functional_specifications.md
+│   │   ├── ...
+│   ├── ...
+```
 
 ### 2. Display
 
