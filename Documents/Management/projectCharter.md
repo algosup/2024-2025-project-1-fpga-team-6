@@ -8,8 +8,8 @@
 | ----------------- | ----------- |
 | Document Owner    | Enzo GUILLOUCHE |
 | Creation Date     | 2024/9/23 |
-| Last Update Date  | 2024/9/ |
-| Document Name     | Project Charter - FPGA [Team 6]|
+| Last Update Date  | 2024/9/27 |
+| Document Name     | Project Charter - FPGA Team 6 |
 
 ---
 
@@ -37,7 +37,7 @@
 
 ## Project Overview
 
-This project aims to create a Froggy game using the FPGA (Field Programmable Gate Array) technology. With the GO-BOARD provided by Russell MERRICK and ALGOSUP, we'll handle input, output, screen display and even memory management.
+This project aims to create a Frogger game using the FPGA (Field Programmable Gate Array) technology. With the Go-Board provided by Russell MERRICK and ALGOSUP, we'll handle input, output, screen display and even memory management.
 
 ## Project Goals
 
@@ -55,12 +55,12 @@ The team is composed of the following members:
 
 | Role               | Name  | Picture |
 | ------------------ | ----- | ------- |
-| Project Manager | Enzo GUILLOUCHE | <img src="https://ca.slack-edge.com/T019N8PRR7W-U05SJQXHTSB-332f808d94ae-50"> |
-| Program Manager | Evan UHRING | <img src="https://ca.slack-edge.com/T07NTS1JBDX-U07NF3DP79R-g6c0a4a84d42-50"> |
-| Technical Leader | Maxime CARON | <img src="https://ca.slack-edge.com/T07NTS1JBDX-U07NAFL6H9C-gf21fde06b1f-50"> |
-| Software Engineer | Elone Delille | <img src="https://ca.slack-edge.com/T07NTS1JBDX-U07NF383KR9-gd0f64565afd-50"> |
+| Project Manager | Enzo GUILLOUCHE | <img src="https://ca.slack-edge.com/T019N8PRR7W-U05SJQXHTSB-3d5d3475a625-50"> |
+| Program Manager | Evan UHRING | <img src="https://ca.slack-edge.com/T019N8PRR7W-U05SZB90074-1c8c0fca09b4-50"> |
+| Technical Leader | Maxime CARON | <img src="https://ca.slack-edge.com/T019N8PRR7W-U05SZ8EATJP-2f1b14ca0bd5-50"> |
+| Software Engineer | Elone DELILLE | <img src="https://ca.slack-edge.com/T019N8PRR7W-U05SJR05FL7-464fe5ab420c-50"> |
 | Quality Assurance | Alex DAVID | <img src="https://ca.slack-edge.com/T07NTS1JBDX-U07N0KK892B-g30a1fc2e1b6-50"> |
-| Technical Writer | Pierre GORIN | <img src="https://ca.slack-edge.com/T07NTS1JBDX-U07NF6CC8PL-g856b064e960-50"> |
+| Technical Writer | Pierre GORIN | <img src="https://ca.slack-edge.com/T019N8PRR7W-U02FHCYEJJD-b72455662dbf-50"> |
 
 ## Stakeholders
 
@@ -102,7 +102,10 @@ Here are the milestones according to the deliverables:
 
 ### Resources
 
---
+- **FPGA (Field-Programmable Gate Array)**: The main hardware component used for implementing the score and interfacing with the 7-segment display.
+- **VGA Compatible Monitor**: Used to display the output of the FPGA system, allowing for visual feedback and testing.
+- **VGA Cable**: Connects the FPGA to the VGA monitor, enabling signal transmission for display purposes.
+
 
 ### Constraints
 
@@ -120,4 +123,8 @@ To ensure the success of the project, the team will follow the following plan:
 
 ## Glossary
 
---
+| **Term**   | **Description** | **Source** |
+|------------|-----------------|------------|
+| **Frogger** | Frogger is a 1981 arcade game developed by Konami, where the player controls a frog attempting to cross a road and a river while avoiding obstacles. The game became iconic in the early 1980s and has inspired numerous sequels and remakes. | [Wikipedia: Frogger](https://en.wikipedia.org/wiki/Frogger) |
+| **FPGA (Field-Programmable Gate Array)** | An FPGA is an integrated circuit that can be configured by the user after manufacturing. It is widely used in embedded systems, signal processing, and prototyping because of its flexibility and reprogrammability. | [Wikipedia: FPGA](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
+| **Verilog** | Verilog is a hardware description language (HDL) used to model electronic systems. It is commonly used for the design and verification of digital circuits, particularly in FPGA and ASIC development. | [Wikipedia: Verilog](https://en.wikipedia.org/wiki/Verilog) |
