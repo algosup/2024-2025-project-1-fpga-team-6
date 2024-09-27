@@ -223,6 +223,48 @@ Frogger
 
 ### 2. Display
 
+#### A) Graphics
+The game graphics will be designed to provide a visually appealing and engaging experience for the player. The graphics will include elements such as player character, enemies, obstacles, and background scenery to create an immersive game environment.
+
+The graphics will be implemented using Verilog code to display the game elements on the screen. The graphics will be optimized for the NandLand GO Board's display capabilities to ensure smooth performance and high-quality visuals.
+
+*Every graphic detail is provided in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md).*
+
+#### B) Display Resolution
+The game will be designed to run on the NandLand GO Board's display with a resolution of 640x480 pixels. The game elements will be scaled and positioned to fit the screen size and provide an optimal viewing experience for the player.
+
+The display resolution will be configured in the Verilog code to ensure that the game graphics are displayed correctly on the screen. The game logic will be implemented to handle the display resolution and adjust the game elements accordingly.
+
+#### C) Grid System
+The game will use a grid system to position and move the game elements on the screen. The grid system will divide the screen into cells, allowing the game elements to be placed at specific coordinates and move in discrete steps.
+
+The screen will be divided into a grid of 20 columns and 15 rows, with each cell representing a specific position on the screen. The grid system will be implemented in the Verilog code to handle the positioning and movement of the game elements.
+
+#### D) Sprites
+The game will use sprites to represent the game elements such as the player character, enemies, obstacles, and background scenery. Sprites are 2D images that can be displayed on the screen to create visual representations of the game elements.
+
+Sprites resolution will be 32x32 pixels, allowing for detailed and recognizable graphics. The sprites will be designed to be visually distinct and easily recognizable by the player.
+
+The sprites will be implemented in the Verilog code as arrays of pixel values, with each pixel representing a color value. The sprites will be displayed on the screen using the VGA connector of the NandLand GO Board.
+
 ### 3. Movement
 
+#### A) Player Movement 
+##### ➭ <ins> With GO Board Buttons </ins>
+The player character will be able to move in four directions: up, down, left, and right. The player movement will be controlled using the buttons on the NandLand GO Board, allowing the player to navigate the game environment and avoid obstacles.
+
+##### ➭ <ins> With Pmod Buttons </ins>
+The player character will be able to move in four directions: up, down, left, and right. The player movement will be controlled using the PMOD buttons connected to the controller, allowing the player to navigate the game environment and avoid obstacles.
+
+#### B) Enemy Movement
+The enemies will move horizontally across the screen at a constant speed. The enemies will move in a straight line from one side of the screen to the other, posing a challenge to the player as they navigate the game environment.
+
+The enemy movement will be implemented in the Verilog code using a timer and counter to control the speed and direction of the enemies. The enemies will move at a consistent pace, requiring the player to time their movements carefully to avoid collisions.
+
 ### 4. Collisions
+The player character will collide with enemies and obstacles if they come into contact with them. Collisions will result in the player losing a life and being respawned at the starting position.
+
+The collision detection will be implemented in the Verilog code using bounding boxes to check for overlap between the player character and the enemies or obstacles. When a collision is detected, the game logic will handle the player's response and update the game state accordingly.
+
+### 5. Scoring
+
