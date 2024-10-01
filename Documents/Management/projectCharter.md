@@ -30,6 +30,7 @@
   - [Resources and Constraints](#resources-and-constraints)
     - [Resources](#resources)
     - [Constraints](#constraints)
+  - [Budget](#budget)
   - [Overall plan](#overall-plan)
   - [Glossary](#glossary)
 
@@ -114,6 +115,11 @@ Here are the milestones according to the deliverables:
 - **Power Consumption**: The FPGA has a limited power supply, so the design must be optimized to prevent excessive power consumption, which can affect performance and longevity. Also, the FPGA needs to be supplied with power, directly plugged in or using a battery.
 - **Verilog Language**: The game logic and hardware interfacing must be implemented using Verilog, requiring the team to adhere to the constraints and limitations of this hardware description language.
 - **Development Time**: The project has a strict deadline (2024/10/21), meaning that the team needs to manage their time efficiently to complete all deliverables on schedule.
+
+## Budget
+
+As we're tying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
+All the pruchases will be endorsed by the team members at first.
 
 ## Overall plan
 
