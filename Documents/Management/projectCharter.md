@@ -1,4 +1,4 @@
-# Project Charter - FPGA Team 6
+# 2024 - 2025 Project 1 FPGA Team 6 - Project Charter
 
 ## Document Control
 
@@ -8,8 +8,8 @@
 | ----------------- | ----------- |
 | Document Owner    | Enzo GUILLOUCHE |
 | Creation Date     | 2024/9/23 |
-| Last Update Date  | 2024/9/27 |
-| Document Name     | Project Charter - FPGA Team 6 |
+| Last Update Date  | 2024/10/2 |
+| Document Name     | 2024 - 2025 Project 1 FPGA Team 6 - Project Charter |
 
 ---
 
@@ -17,7 +17,7 @@
 
 <summary>Click to expand</summary>
 
-- [Project Charter - FPGA Team 6](#project-charter---fpga-team-6)
+- [2024 - 2025 Project 1 FPGA Team 6 - Project Charter](#2024---2025-project-1-fpga-team-6---project-charter)
   - [Document Control](#document-control)
   - [Project Overview](#project-overview)
   - [Project Goals](#project-goals)
@@ -38,7 +38,7 @@
 
 ## Project Overview
 
-This project aims to create a Frogger game using the FPGA (Field Programmable Gate Array) technology. With the Go-Board provided by Russell MERRICK and ALGOSUP, we'll handle input, output, screen display and even memory management.
+This project aims to create a Frogger game using the FPGA (Field Programmable Gate Array) technology. With the Go-Board provided by Russell MERRICK and ALGOSUP, we'll handle input, output, screen display and even memory management with the Verilog programming language.
 
 ## Project Goals
 
@@ -46,13 +46,13 @@ We are wanting to perform few goals with this project:
 
 - Recreate the original game with its features (20x15 grid, a controlable frog, harmful cars with random sizes and speed, collisions...)
 - Add colors and animations to the game when we display it.
-- Create a controller to enhance the user experience.
+- [NON REQUIRED] Create a controller to enhance the user experience.
 
 ## Team
 
 ### Members and Roles
 
-The team is composed of the following members:
+The team is composed of the following members with their dedicated role:
 
 | Role               | Name  | Picture |
 | ------------------ | ----- | ------- |
@@ -81,7 +81,7 @@ We have to deliver the following deliverables :
 - Technical Specifications
 - Test Plan
 - User Manual
-- Code
+- Source Code
 - Unit Tests
 - Weekly Reports and Management Planning
 
@@ -94,10 +94,10 @@ Here are the milestones according to the deliverables:
 | Deliverable | Description | Due Date | Time |
 | ----------- | ----------- | -------- | ---- |
 | Functional Specifications | A document that describes the what we're going to build and the expected behavior of the Frogger game. | 2024/10/7 | 5PM |
-| Technical Specifications | A document that describes the technical requirements and how the Frogger game should work. | 2024/10/14 | 5PM |
+| Technical Specifications | A document that describes the technical requirements and how the Frogger game should be created. | 2024/10/14 | 5PM |
 | Test Plan | A document that describes the test strategy and the test cases that will be used to validate the Frogger game. | 2024/10/21 | 5PM |
 | User Manual | A document that describes how to play our Frogger. | 2024/10/21 | 5PM |
-| Code | The source code of the Frogger game. | 2024/10/21 | 5PM |
+| Source Code | The source code of the Frogger game. | 2024/10/21 | 5PM |
 
 ## Resources and Constraints
 
@@ -120,6 +120,9 @@ Here are the milestones according to the deliverables:
 
 As we're tying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
 All the pruchases will be endorsed by the team members at first.
+
+**[Last Update: 2024/10/2]**
+The total cost of the project is <u>13.70 Euros TTC</u>. 
 
 ## Overall plan
 

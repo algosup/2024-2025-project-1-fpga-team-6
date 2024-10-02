@@ -69,7 +69,7 @@ This section tracks the following KPIs:
 - **Car Display**
 - **Car Behavior**
 - **Levels**
-- **Sprites integration**
+- **Sprites Integration**
 
 ### Link to the project's KPIs
 
@@ -86,8 +86,7 @@ You can directly access the reports individually following the below bullet poin
 - [Access Report for Week 3](/Documents/Management/WeeklyReports/week3.md)
 - [Access Report for Week 4](/Documents/Management/WeeklyReports/week4.md)
 - [Access Report for Week 5](/Documents/Management/WeeklyReports/week5.md)
-- [Access Report for Week 6](/Documents/Management/WeeklyReports/week6.md)
 
 For a centralized collection of copies of all the reports in a single document, please refer to the Cumulative File for Weekly Reports:
 
-- [Access Cumulative file for all 6 weeks](/Documents/Management/WeeklyReports/cumulative.md)
+- [Access Cumulative file for all 5 weeks](/Documents/Management/WeeklyReports/cumulative.md)
