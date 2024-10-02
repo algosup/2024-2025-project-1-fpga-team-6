@@ -64,7 +64,7 @@
 
 | Document name | Document owner | Date of last update |
 | --- | --- | --- |
-| Functional specifications | Evan UHRING | 9/27/2024 |
+| Functional specifications | Evan UHRING | 10/2/2024 |
 
 
 ## Document validation
@@ -112,14 +112,14 @@ Make a recreation of the game Frogger while adding our own touch to it.
 | Each cell of the grid has to be 32x32 pixels |
 | Each button of the FPGA has to be one of the four direction movement |
 | The game can be reset to the beginning by pressing the four buttons of the FPGA at the same time |
-| The display has to be a VGA display |
-| The level number has to be displayed using the two seven segment displays of the FPGA |
+| The display has to be a VGA<sup><a href="#3">[3]</a></sup> display |
+| The level number has to be displayed using the two seven segment displays<sup><a href="#4">[4]</a></sup> of the FPGA |
 
 | Out of scope |
 | --- |
 | Each level don't increase in difficulty |
-| Having a menu |
-|
+| Publish the game for commercial purposes |
+| Implement scoring mechanic |
 
 
 ### Deliverables
@@ -153,6 +153,7 @@ Make a recreation of the game Frogger while adding our own touch to it.
 | Software engineer | Writes the code.<br>Writes documentation<br>Participate in the technical design. | Elone DELILLE |
 | Quality assurance |  Tests all the functionalities of a product to find bugs and issues.<br>Document bugs and issues.<br>Write the test plan.<br>Check that issues have been fixed.| Axel DAVID |
 | Technical writer | Is in charge of writing a user manual | Pierre GORIN |
+
 <br><br>
 
 
@@ -163,7 +164,7 @@ Make a recreation of the game Frogger while adding our own touch to it.
 ### History
 ---
 
-Frogger is an arcade action game developed by Konami<sup><a href="#3">[3]</a></sup> in the year 1981, then published by SEGA<sup><a href="#4">[4]</a></sup> outside of Japan.
+Frogger is an arcade action game developed by Konami<sup><a href="#5">[5]</a></sup> in the year 1981, then published by SEGA<sup><a href="#6">[6]</a></sup> outside of Japan.
 
 ### Gameplay
 ---
@@ -182,7 +183,7 @@ Frogger uses a grid 14x16. Each cell is 16x16 pixels, which makes a total of 224
 
 #### Fonts
 
-It uses the monospace sans-serif font in uppercase, the same font as the game Pac-Man. It also uses it in multiple colors such as white, red, yellow, blue and pink. There is also a sprite of five letters used for the title of the game with a special color style.
+It uses the monospace sans-serif font in uppercase, the same font as the game Pac-Man. It also uses it in multiple colors such as white, red, yellow, blue and pink. There is also a sprite<sup><a href="#7">[7]</a></sup> of five letters used for the title of the game with a special color style.
 
 <img src="Images/froggerFonts.png" width="35%" style="image-rendering: pixelated"><br>
 <img src="Images/froggerFontsTitle.png" width="35%" style="image-rendering: pixelated">
@@ -230,11 +231,17 @@ Sometimes, an insect can spawn on one water cell of the finish line.
 
 <img src="Images/froggerInsect.png" width="35%" style="image-rendering: pixelated"><br>
 
-When going on it, you gain extra points (see [points table](#scoring))
+When going on it, the player gain extra points (see [points table](#scoring)).
 
 #### Lady frogs
 
-As well as the insect, a lady frog can spawn 
+As well as the insect, a lady frog can spawn randomly.
+
+<img src="Images/froggerLadyFrog.png" width="35%" style="image-rendering: pixelated"><br>
+
+When the player steps on it, he grabs the lady frog, to escort it to the finish line. If the player successfully escorted the lady frog, the player gain extra points (see [points table](#scoring)).
+
+The lady frog has the same movement animation than the frog the player is playing.
 
 #### Road
 
@@ -274,6 +281,16 @@ The player can step on them to cross the river, but because the wood logs move a
 
 The turtles work like the wood logs with one exceptions: they can go under water, and so the player can't step on them.
 
+The movement animation is separated into three sprites, playing in one way then in the other way to get back at the beginning of the animation for a smooth animation.
+
+<img src="Images/froggerTurtles.png" width="70%" style="image-rendering: pixelated"><br>
+
+They also have an animation when going under water, separated into two sprites.
+
+<img src="Images/froggerTurtlesWater.png" width="50%" style="image-rendering: pixelated"><br>
+
+The first sprite is to tell to the player that the turtles are going into the water, so the player is still able to step on it. But on the last one the player is no more able to step on the turtles. After few seconds, the turtles get back to their original movement animation.
+
 #### Crocodiles
 
 The crocodiles also work like the wood logs with as well one difference: if the player tries to step on the face of a crocodile, the player dies.
@@ -288,11 +305,18 @@ Crocodiles start to appear at the second level, and replaces some wood logs.
 
 #### Otters
 
+Otters can sometime appear in the river. If the player steps on them, the frog dies. They use two sprites: one when moving and one when attacking the frog.
 
+<i style="font-size: 12px">Left, moving sprite. Right, attacking sprite</i><br>
+<img src="Images/froggerOtters.png" width="50%" style="image-rendering: pixelated"><br>
 
 #### Snakes
 
+The snakes appear randomly on the river or on the line between the river and the road. If they touch the player, the player will die.
 
+The snakes have a movement animation separated into three different sprites, playing in one way then in the other way to get back at the beginning of the animation for a smooth animation.
+
+<img src="Images/froggerSnake.png" width="70%" style="image-rendering: pixelated"><br>
 
 #### "Safe zones"
 
@@ -356,7 +380,17 @@ In Frogger, a second player can play the game, but the two players play separate
 ### Sounds
 ---
 
+They are multiple sounds for the different event as listed below:
 
+- player moving
+- cars moving
+- main music (2 different)
+- getting to the finish line
+- eating an insect
+- grabbing a lady frog
+- successfully escorted a lady frog
+- falling into the river
+- dying
 
 ## 3. Our version
 
@@ -368,7 +402,47 @@ For our Frogger, our requirements are to create it using VGA, which gives us a r
 
 Following our requirement, we will not have a timer nor a score, but the level number will be displayed using the two seven segments displays of the FPGA.
 
-The font that we will use will be the same as the original game, but we will only use the blue, white and red fonts.
+The font that we will use will be a redesign of the original font, in  blue, white and red.
+
+<i style="font-size: 12px">They are shown in black but they will be recolored in the program using the correct colors</i><br>
+<img src="Images/font/a.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/b.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/c.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/d.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/e.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/f.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/g.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/h.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/i.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/j.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/k.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/l.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/m.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/n.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/o.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/p.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/q.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/r.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/s.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/t.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/u.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/v.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/w.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/x.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/y.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/z.png" width="10%" style="image-rendering: pixelated"><br>
+<img src="Images/font/one.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/two.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/three.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/four.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/five.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/six.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/seven.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/eight.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/nine.png" width="10%" style="image-rendering: pixelated">
+<img src="Images/font/zero.png" width="10%" style="image-rendering: pixelated">
+
+
 
 When starting the game, the player will get to a menu, where he can choose to play or to quit. While in game, you can open a pause menu, to either go back to the main menu, restart or continue.
 
@@ -376,7 +450,7 @@ When starting the game, the player will get to a menu, where he can choose to pl
 
 #### The environment
 
-The environment, following our requirements, will be separated into two different types of zones: the safe zones and the roads. They are distributed on every 15 rows that are available (described <a href="#distri-table">here</a>). On the roads, cars will go from left to right or right to left, depending on how it will be set for each row (described <a href="#distri-table">here</a>). 
+The environment, following our requirements and our possibilities with the hardware we are using, will be separated into two different types of zones: the safe zones and the roads. They are distributed on every 15 rows that are available (described <a href="#distri-table">here</a>). On the roads, cars will go from left to right or right to left, depending on how it will be set for each row (described <a href="#distri-table">here</a>). 
 
 We will use 3 different sprites for the cars, each of them fitting in one cell of the grid. Tow of the cars that we will use are up-scales from the original sprites, and one has been created by us. Each car will have its own row (described <a href="#distri-table">here</a>). They will also have different speeds, defined by lowest, medium and highest. The car 1 as a medium speed, the car 2 has the lowest speed and the car 3 has the highest.
 
@@ -403,12 +477,12 @@ We will use 3 different sprites for the cars, each of them fitting in one cell o
 |  | Road (right to left) Car 2|
 |  | Road (left to right) Car 3|
 |  | Road (left to right) Car 2|
-|  | Safe zone (start line) |
+|  | Safe zone (Start line) |
 | |
 
 We will use sprites to show the different zones, one is a road and the other one is grass:
 
-<i style="font-size: 12px">Road on the right, grass on the left</i><br>
+<i style="font-size: 12px">Road on the left, grass on the right</i><br>
 <img src="Images/road.png" width="30%" style="image-rendering: pixelated">
 <img src="Images/grass.png" width="30%" style="image-rendering: pixelated">
 
@@ -430,13 +504,12 @@ When the player gets ran over by a car, he will get a game over menu where he ca
 
 ## 4. Personas definition
 
-| **:** | **:** | **:** |
+| **Retro player:** | **Speed runner:** | **Casual player:** |
 | --- | --- | --- |
-| ![]() | ![]() | ![]() |
-| Name:  | Name:  | Name:  |
-| Age:  | Age:  | Age:  |
-| Problem:  | Problem:  | Problem:  |
-| What he wants:  | What he wants:  | What she wants:  |
+| ![](Images/personaAxel.jpeg) | ![](Images/personaSam.jpeg) | ![](Images/personaCamille.jpeg) |
+| Name: Alex | Name: Sam | Name: Camille |
+| Age: 42 | Age: 26 | Age: 34 |
+| He has played almost every retro games, and when talking about a recreation, he excepts to have something that is as much closer to the original game as possible. | His goal is to be able to be the one to finish the game as fast as possible. Every games doesn't block him from challenging each possibilities to speed run it. So he wants to be able to do it, even if it's hard or not. | Casually playing games, he doesn't look for something too hard or too easy. The best of the two world is enough to keep him entertained. |
 <br><br>
 
 
@@ -460,8 +533,10 @@ When the player gets ran over by a car, he will get a game over menu where he ca
 
 | Word | Definition | Source |
 | --- | --- | --- |
-| <a id="1">[1]</a>: FPGA |  | [wikipedia.org](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
-| <a id="2">[2]</a>: verilog |  |  |
-| <a id="3">[3]</a>: Konami |  |  |
-| <a id="4">[4]</a>: SEGA |  |  |
-| <a id="5">[4]</a>: sprite |  |  |
+| <a id="1">[1]</a>: FPGA | Short of Field Programmable Gate Array, it is a type of configurable integrated circuit that can be repeatedly programmed after manufacturing. | [wikipedia.org](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
+| <a id="2">[2]</a>: verilog | It is a hardware description language (HDL) used to model electronic systems (like an FPGA). | [wikipedia.org](https://en.wikipedia.org/wiki/Verilog) |
+| <a id="3">[3]</a>: VGA | Short of Video Graphic Array, it is a video display controller. | [wikipedia.org](https://en.wikipedia.org/wiki/Video_Graphics_Array) |
+| <a id="4">[4]</a>: seven segment display | It is a form of electronic display device for displaying decimal numerals. | [wikipedia.org](https://en.wikipedia.org/wiki/Seven-segment_display) |
+| <a id="5">[5]</a>: Konami | It is a japanese corporation focused on digital entertainment and sport businesses. | [konami.com](https://www.konami.com) |
+| <a id="6">[6]</a>: SEGA | It is a japanese corporation focused on the video game business. | [sega.com](https://www.sega.com/homepage) |
+| <a id="7">[7]</a>: sprite | In computer graphics, it is a two dimensional map used to texture models of a 2D game. | [wikipedia.org](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)) |
