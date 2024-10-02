@@ -38,9 +38,15 @@ To be able to upload some code in this hardware, we used Verilog as a programmin
 
 ## Can we play the game though? 🕹️
 
-As long as you own a Go-Board, a VGA compatible monitor and a VGA cable, you can play!<br>
+To play the game, you'll need to have some <u>required elements</u>:
 
-You first need to setup apio on your machine. Follow the steps on this [link](https://nandland.com/set-up-apio-fpga-build-and-program/).
+- A Go-Board
+- A VGA compatible monitor 
+- A VGA cable
 
-Once you've setup the software, all you need is download our project from this repository, and upload it into the board using `apio upload` command on your terminal. (make sure you're in the project's folder!)
-Then, if the board is plugged and connected to a VGA monitor, the game will launch!
+Then, you'll need to setup apio on your machine. 
+To do this, follow the steps on this [link](https://nandland.com/set-up-apio-fpga-build-and-program/).
+
+Once you've setup the software, all you need is [download our project](https://github.com/algosup/2024-2025-project-1-fpga-team-6/releases), and upload it into the board using the `apio upload` command on your terminal. (make sure you're in the project's folder!)
+
+Then, if the board is correctly plugged and connected to a VGA monitor, the game will launch!
