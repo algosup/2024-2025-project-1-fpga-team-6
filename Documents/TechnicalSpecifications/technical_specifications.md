@@ -6,13 +6,14 @@
 | ----------------- | ------------------------------------------- |
 | Document Owner    | Maxime CARON                                |
 | Creation Date     | 2024/09/23                                  |
-| Last Update Date  | 2024/09/23                                  |
+| Last Update Date  | 2024/10/02                                  |
 | Document Name     | Technical Specifications - Frogger [Team 6] |
 
 ### Document Version
 | Version n° | Author       | Date       | Description of edits |
 | ---------- | ------------ | ---------- | -------------------- |
 | 0.01       | Maxime CARON | 2024/09/23 | Document skeleton    |
+| 0.02       | Maxime CARON | 2024/10/01 | Rework structure     |
 
 ## Table of Content
 
@@ -30,6 +31,7 @@
 | testbenches |           |        |
 | IDE       |             |        |
 | syntax highlighting |   |        |
+| code completion |       |        |
 
 
 ### 2. Document Purpose
@@ -140,6 +142,7 @@ Verilog is a hardware description language used to model electronic systems. It 
 Here is an example of a simple Verilog code that implements a basic logic gate:
 
 ```verilog
+// This module implements an AND gate
 module and_gate(input a, input b, output y);
     assign y = a & b;
 endmodule
@@ -153,9 +156,11 @@ SystemVerilog is an extension of Verilog that adds new features and capabilities
 Here is an example of a simple SystemVerilog code that implements a basic counter:
 
 ``` verilog
+// This module implements a simple counter
 module counter;
-    int count = 0;
+    int count = 0; // Counter variable
 
+    // Counter logic
     initial begin
         while (1) begin
             $display("Count: %d", count);
@@ -224,6 +229,32 @@ Frogger
 │   ├── ...
 ```
 
+#### D) Coding Standards
+The project will follow the following coding standards:
+
+- **Indentation:** The code will be indented using 4 spaces for each level of indentation.
+- **Comments:** Comments will be used to explain the purpose of the code, variables, and functions. Comments will be written in English and follow a consistent style.
+- **Naming conventions:** Variables, modules, and constants will be named using descriptive names that reflect their purpose and functionality. Naming conventions will follow the guidelines outlined in the previous section.
+- **Code structure:** The code will be structured logically, with modules, functions, and variables organized in a clear and coherent manner. Code will be divided into separate modules for different functionalities to improve readability and maintainability.
+- **Error handling:** Error handling will be implemented to detect and handle errors that may occur during the execution of the code. Error messages will be displayed to the user to provide feedback on the issue.
+
+#### E) Comments
+Comments will be used throughout the code to explain the purpose of the code, variables, and functions. Comments will be written in English and follow a consistent style to ensure readability and maintainability of the code.
+
+Here is an example of a comment in Verilog code:
+```verilog
+// This module implements the game logic for Frogger
+module game_logic(
+    input clk, // Clock signal
+    input reset, // Reset signal
+    input [7:0] player_position, // Player position
+    output [7:0] enemy_position // Enemy position
+
+    // Add more comments as needed
+);
+```
+
+
 ### 2. Display
 
 #### A) Graphics
@@ -250,38 +281,93 @@ Each sprite will have a resolution of 32x32 pixels, ensuring detailed and recogn
 
 In Verilog, the sprites will be implemented as arrays of pixel values, with each pixel representing a specific color value. The sprites will be displayed on the screen using the VGA connector of the NandLand GO Board.
 
+#### E) Block Ram (BRAM)
+
 ### 3. Movement
 
 #### A) Player Movement 
-##### ➭ <ins> Using GO Board Buttons</ins>
-The player character will be able to move in four directions: up, down, left, and right. This movement will be controlled using the buttons available on the NandLand GO Board, allowing the player to explore the game environment and avoid obstacles.
+Each player movement is managed by the movement module. Every movement is controlled by the player input. The player can move up, down, left, and right. The player can also jump to the next cell in the direction he is moving.
 
-##### ➭ <ins> Using Pmod Buttons</ins>
-Alternatively, the player character can be controlled via PMOD buttons connected to the controller. The player will be able to move up, down, left, and right to navigate the game environment and avoid obstacles.
+##### ➭ <ins>Player Inputs for Movements</ins>
+The player can move using the following inputs:
+- **SW1 (Go Board switch 1):** The player moves up by one cell.
+- **SW4 (Go Board switch 4:** The player moves down by one cell.
+- **SW2 (Go Board switch 2:** The player moves left by one cell.
+- **SW3 (Go Board switch 3:** The player moves right by one cell.
+
+##### ➭ <ins>Player Movement Logic</ins>
+The player movement logic will be implemented in Verilog following the activity diagram below:
+
+```mermaid
+graph TD
+    A[SW1 Pressed] --> B[Check if player can move up]
+    B --> |Yes| C[Move Up]
+    B --> |No| D[Do Nothing]
+    C --> E[Update Player Position]
+
+    F[SW4 Pressed] --> G[Check if player can move down]
+    G --> |Yes| H[Move Down]
+    G --> |No| I[Do Nothing]
+    H --> J[Update Player Position]
+
+    K[SW2 Pressed] --> L[Check if player can move left]
+    L --> |Yes| M[Move Left]
+    L --> |No| N[Do Nothing]
+    M --> O[Update Player Position]
+
+    P[SW3 Pressed] --> Q[Check if player can move right]
+    Q --> |Yes| R[Move Right]
+    Q --> |No| S[Do Nothing]
+    R --> T[Update Player Position]
+
+```
 
 #### B) Enemy Movement
-The enemies will move horizontally across the screen at a constant speed. Their movement will be restricted to a straight line, challenging the player to time their movements to avoid collisions.
 
-Enemy movement will be implemented using a timer and counter in the Verilog code, which will control their speed and direction. The enemies' speed will remain consistent, requiring the player to carefully time their movements.
+##### ➭ <ins>Enemy Pseudo Random Generation</ins>
+
+##### ➭ <ins>Enemy Movement</ins>
 
 ### 4. Collisions
-Collisions between the player character and enemies or obstacles will result in the player losing a life and respawning at the starting position.
 
-Collision detection will be handled in Verilog using bounding boxes to check for overlaps between the player and other game elements. When a collision is detected, the game logic will respond accordingly, updating the game state (such as decreasing lives) and repositioning the player.
+#### A) Player Collisions
 
-### 5. Scoring
-The game will track the player's score based on their progress and interactions within the game environment. Points will be awarded for actions such as avoiding obstacles, defeating enemies, or completing levels. 
+##### ➭ <ins>Water Collisions</ins>
 
-The scoring system will be implemented in Verilog, with the score displayed on the screen. The game logic will update the score in real-time as the player progresses through the game.
+##### ➭ <ins>Wall Collisions</ins>
 
-### 6. Block RAM
-Block RAM (BRAM) will be used to store game data, such as the current state of the game elements, sprites, and level information. BRAM provides a fast and efficient way to access data needed for gameplay.
+##### ➭ <ins>Enemy Collisions</ins>
 
-The Verilog code will be responsible for managing reads and writes to BRAM, ensuring that game data is retrieved and updated as necessary to maintain smooth gameplay.
+#### B) Enemy Collisions
 
-Block RAM will made using flip-flops and multiplexers. The flip-flops will store the data and the multiplexers will select the data to be read or written.
+Enemy collisions will be managed by the collision module. The collision module will check for collisions between the player and enemies, obstacles, and other game elements. When a collision is detected, the appropriate action will be taken based on the collision type.
 
-### 7. Sound
-Sound effects will be added to enhance the gaming experience, providing audio feedback for events such as player movements, collisions, and scoring.
+```mermaid
+graph TD
+    A[Check for Collision] --> B[Check for Player-Enemy Collision]
+    B --> |Yes| C[Player Collides with Enemy]
+    B --> |No| D[Do Nothing]
+    C --> E[Player Loses Life]
+    E --> F[Check Player Lives]
+    F --> |Yes| G[Player Respawn at Level Start]
+    F --> |No| H[Game Over]
+```
 
-The Verilog code will generate sound signals, which will be output through the NandLand GO Board's Pmod. A buzzer or speaker can be connected to the Pmod to produce sound effects based on the game events.
+### 5. Win Condition and Leveling System
+
+#### A) Win condition
+When the player reaches the top of the screen, the player wins the game. The win condition will be triggered when the player reaches the top row of the grid. Then the level will be incremented and the player will move to the next level.
+
+#### B) Leveling System
+The game will feature multiple levels, each with increasing difficulty and challenges. The difficulty is represented by the speed of the enemies, every 5 levels the speed of the enemies will increase by 5%. The speed of the enemies will stop increasing after level 30.
+
+The level system will be implemented in Verilog following the activity diagram below:
+
+```mermaid
+graph TD
+    A[Player Wins] --> B[Check if Level is less than 30]
+    B --> |Yes| C[Increment Level]
+    B --> |No| D[Do Nothing]
+    C --> E[Increase Enemy Speed]
+    E --> F[Move to Next Level]
+```
