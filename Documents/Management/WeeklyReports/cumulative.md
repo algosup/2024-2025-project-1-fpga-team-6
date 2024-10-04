@@ -69,7 +69,7 @@ This second week has been dedicated to finish the functional specifications and 
 ## Accomplishments
 
 1. **Functional specifications has been finished**
-    - THe remaining sprites have been made by the team, allowing us to be more precise in the specifications.
+    - The remaining sprites have been made by the team, allowing us to be more precise in the specifications.
 2. **Development advanced well**
     - The team made improvements on the code, such as the level score displayed on the 7-segment, detection collisions and sprite integrations.
 3. **3D prints have been useful**
@@ -99,4 +99,4 @@ This second week has been dedicated to finish the functional specifications and 
 
 ## Conclusion
 
-The specifications are quite on their schedule, and we're made huge improvements on the code. Though the use of blocks RAM will be needed.
+The specifications are quite on their schedule, and we've made huge improvements on the code. Though the use of blocks RAM will be needed.
