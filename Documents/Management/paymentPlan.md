@@ -2,38 +2,53 @@
 
 ## Introduction
 
-This document outlines the payment structure, frequency, and other financial details for team members.
-All salaries used in this document are net.
+This document outlines the payment structure, frequency, and other financial details for team members.  
+All salaries specified in this document are **net** salaries.
 
 ## Payment Structure
 
-The salary of all the employees will be set at an annual base of $73,000.
+The salary of all employees is set at an annual base of **$73,000**.
 
-To calculate the hourly wage from an annual salary of $73,000, we're going to use the following formula:
+To calculate the hourly wage from an annual salary of $73,000, the following formula is used:
 
-1. Calculate the total number of work hours in a year:
+1. **Total annual work hours**:
    - Standard workweek: 35 hours
-   - Weeks in a year: 52
+   - Weeks per year: 52
 
-   Total work hours = \(35 \text{ hours/week} \times 52 \text{ weeks/year} = 1,820 \text{ hours/year}\)
+   \[
+   \text{Total work hours} = 35 \text{ hours/week} \times 52 \text{ weeks/year} = 1,820 \text{ hours/year}
+   \]
 
-2. Now, divide the annual salary by the total work hours:
+2. **Hourly rate calculation**:
 
-  \[
+   \[
    \text{Hourly rate} = \frac{73,000}{1,820} \approx 40.11
    \]
 
-So, each employee would earn approximately **$40.11 per hour** as a **salary base**.
+Each employee will earn approximately **$40.11 per hour** as a base salary. The scheduled work hours are defined by the specific project hours.
 
-The work hours will be the scheduled project hours.
+## Payment Frequency
 
----
-
-Overtime pay will be calculated at 120% the hourly wage for hours worked beyond the standard hours scheduled per week.
-For instance:
+Employees will be paid on a **monthly** basis. Monthly payment is calculated by dividing the annual salary into 12 equal installments:
 
    \[
-    \text{Overtime Hourly rate} = {40.11}\times\frac{120}{100} = 40.11 \times 1.2 \approx 48.13
-    \]
+   \text{Monthly salary} = \frac{73,000}{12} \approx 6,083.33
+   \]
 
-**Overtime** will be paid approximately **$48.13 per hour**.
+Each employee will earn approximately **$40.11 per month** as a base salary.
+
+## Overtime Payment
+
+Overtime will be compensated at **120%** of the hourly wage for any hours worked beyond the standard 35 hours per week. The overtime rate is calculated as follows:
+
+\[
+\text{Overtime hourly rate} = 40.11 \times 1.2 \approx 48.13
+\]
+
+Thus, overtime work will be paid at approximately **$48.13 per hour**.
+
+## Additional Considerations
+
+1. **Rounding**: All hourly rates and salary figures are rounded to the nearest two decimal places for simplicity in calculation.
+2. **Sick Leave**: Employees are entitled to **5 paid sick days** per year.
+3. **Payroll Deductions**: No deductions (such as taxes, benefits, etc.) are taken in charge, as this document considers net salaries only.
