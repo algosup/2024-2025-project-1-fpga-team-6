@@ -135,6 +135,8 @@ This is why a payment plan needs to exist, specifying all the details of their s
 
 All the details will be transcribed [here](./paymentPlan.md).
 
+The salaries of all employees will also be calculated [here](https://docs.google.com/spreadsheets/d/1VtP9JFDbZZyR1j2Y3k1gx6w9rpxCVBYFLcs5t8GX-Cw/edit?usp=sharing), summarizing the average salaries for all weeks.
+
 ## Overall plan
 
 To ensure the success of the project, the team will follow the following plan:
