@@ -13,72 +13,126 @@
 | Version n° | Author       | Date       | Description of edits |
 | ---------- | ------------ | ---------- | -------------------- |
 | 0.01       | Maxime CARON | 2024/09/23 | Document skeleton    |
-| 0.02       | Maxime CARON | 2024/10/01 | Rework structure     |
+| 0.02       | Maxime CARON | 2024/10/01 | Reworked structure     |
 | 0.03       | Maxime CARON | 2024/10/02 | Add technical specifications |
 
-## Table of Content
+## Table of Contents
+
+<details>
+<summary><b>Click to expand</b></summary>
+
+- [Technical Specifications - FPGA \[Team 6\]](#technical-specifications---fpga-team-6)
+  - [Document Control](#document-control)
+    - [Document Information](#document-information)
+    - [Document Version](#document-version)
+  - [Table of Contents](#table-of-contents)
+  - [I. Introduction](#i-introduction)
+    - [1. Glossary](#1-glossary)
+    - [2. Document Purpose](#2-document-purpose)
+    - [3. Project Definition](#3-project-definition)
+      - [A) Vision](#a-vision)
+      - [B) Assumptions](#b-assumptions)
+  - [II. Technology Presentation](#ii-technology-presentation)
+    - [1. NandLand GO Board](#1-nandland-go-board)
+      - [A) Materials specifications](#a-materials-specifications)
+        - [➭  FPGA ](#--fpga-)
+        - [➭  LEDs ](#--leds-)
+        - [➭  7-Segment Display ](#--7-segment-display-)
+        - [➭  Push Buttons ](#--push-buttons-)
+        - [➭  VGA Connector ](#--vga-connector-)
+        - [➭  Micro USB Connector ](#--micro-usb-connector-)
+        - [➭  PMOD Connector ](#--pmod-connector-)
+      - [B) Setup](#b-setup)
+    - [2. Verilog and SystemVerilog](#2-verilog-and-systemverilog)
+      - [A) Language](#a-language)
+        - [➭  Verilog ](#--verilog-)
+        - [➭  SystemVerilog ](#--systemverilog-)
+      - [B) Working Environment](#b-working-environment)
+  - [III. Technical Specifications](#iii-technical-specifications)
+    - [1. Project Conventions](#1-project-conventions)
+    - [2. Display](#2-display)
+      - [A) Graphics](#a-graphics)
+      - [B) Display Resolution](#b-display-resolution)
+      - [C) Grid System](#c-grid-system)
+      - [D) Sprites](#d-sprites)
+      - [E) Block Ram (BRAM)](#e-block-ram-bram)
+    - [3. Movement](#3-movement)
+      - [A) Player Movement](#a-player-movement)
+        - [➭ Player Inputs for Movements](#-player-inputs-for-movements)
+        - [➭ Player Movement Logic](#-player-movement-logic)
+      - [B) Enemies Movement](#b-enemies-movement)
+        - [➭ Enemies Pseudo Random Generation](#-enemies-pseudo-random-generation)
+        - [➭ Enemies Movements](#-enemies-movements)
+    - [4. Collisions](#4-collisions)
+      - [A) Collisions Detection](#a-collisions-detection)
+      - [B) Player Collisions Behaviors](#b-player-collisions-behaviors)
+        - [➭ Water Collisions](#-water-collisions)
+        - [➭ Wall Collisions](#-wall-collisions)
+        - [➭ Enemy Collisions](#-enemy-collisions)
+      - [B) Enemy Collisions Behaviors](#b-enemy-collisions-behaviors)
+    - [5. Win Condition and Leveling System](#5-win-condition-and-leveling-system)
+      - [A) Win condition](#a-win-condition)
+      - [B) Leveling System](#b-leveling-system)
+
+</details>
+
 
 ---
 ## I. Introduction
 ---
 ### 1. Glossary
 
-| Term                | Description | Source |
-| ------------------- | ----------- | ------ |
-| FPGA                |             |        |
-| Frogger             |             |        |
-| NandLand            |             |        |
-| Verilog             |             |        |
-| SystemVerilog       |             |        |
-| testbenches         |             |        |
-| IDE                 |             |        |
-| syntax highlighting |             |        |
-| code completion     |             |        |
+| Term                | Description                                                                                           | Source                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Code Completion     | A feature in IDEs that suggests possible completions for partially typed code, improving efficiency.    | [Wikipedia](https://en.wikipedia.org/wiki/Intelligent_code_completion)  |
+| FPGA                | Field Programmable Gate Array - A type of hardware used to implement digital circuits.                 | [Wikipedia](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
+| Frogger             | A classic 1981 arcade game where players control a frog attempting to cross a busy road and river.     | [Wikipedia](https://en.wikipedia.org/wiki/Frogger)                      |
+| IDE                 | Integrated Development Environment - Software used for writing, compiling, and debugging code.         | [Wikipedia](https://en.wikipedia.org/wiki/Integrated_development_environment) |
+| NandLand            | A company that provides educational FPGA hardware and learning resources, such as the GO Board.        | [NandLand](https://www.nandland.com)                                    |
+| Syntax Highlighting | A feature in IDEs that displays code in different colors and fonts to differentiate between elements.   | [Wikipedia](https://en.wikipedia.org/wiki/Syntax_highlighting)          |
+| SystemVerilog       | An extension of Verilog with additional features for system-level design, verification, and simulation. | [Wikipedia](https://en.wikipedia.org/wiki/SystemVerilog)                |
+| Testbenches         | Simulations that verify the functionality of a digital circuit by applying inputs and comparing outputs.| [Intel](https://www.intel.com/content/www/us/en/docs/programmable/683734)|
+| Verilog             | A hardware description language (HDL) used to model and simulate digital systems at the RTL level.     | [Wikipedia](https://en.wikipedia.org/wiki/Verilog)                      |
 
 
 ### 2. Document Purpose
 
-The purpose of this document is to expand upon the functional specifications by defining the features, scope, and objectives of the project. It provides detailed explanations of how each feature works and serves as a comprehensive guide for the development team and other team members who need an in-depth understanding of the application.
+This document outlines the technical aspects of the Frogger game project, building upon the functional specifications. It defines the technical details, scope, and features of the game to ensure that the development follows the guidelines and meets project objectives.
 
-It is highly recommended to read the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md) before proceeding with this document.
+To gain a full understanding of the project, it is recommended to first review the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md).
 
-This document serves as a reference for the development team to understand the technical requirements of the project, ensuring that the project is developed in alignment with the specified guidelines.
-
-Additionally, it provides resources on coding conventions, database structure, graphic standards, and other aspects crucial to the maintainability and scalability of the application.
+This document also serves as a technical reference for development, detailing conventions, tools, and methodologies that will enhance project scalability and maintainability.
 
 ### 3. Project Definition
 
-The project aims to develop a Frogger game using the NandLand GO Board and Verilog. The game will be implemented on the FPGA board, allowing users to play the classic Frogger game on the hardware platform. The game will include features such as movement, collisions, and scoring, providing an interactive and engaging experience for users.
+The goal of this project is to create a hardware implementation of the Frogger game using the NandLand GO Board and Verilog. The game will feature movement, collision detection, and scoring mechanisms.
 
 #### A) Vision
 
-The vision of the project is to keep the original gameplay experience of Frogger while personalizing graphics and adding new features to enhance user engagement. The project aims to provide a fun and challenging game that can be played on the NandLand GO Board, offering users an interactive and entertaining experience.
+Our vision is to recreate the classic Frogger gameplay with personalized graphics and additional features that enhance player engagement. The game will run on the NandLand GO Board, offering a fun and interactive experience.
 
 #### B) Assumptions
-For this project the team assume that:
-- The NandLand GO Board is fully functional and compatible with the Verilog code.
-- The Verilog code is correctly implemented and tested on the FPGA board.
-- The game features are implemented according to the functional specifications.
-- The game runs smoothly and provides an engaging user experience.
-- The game is free of bugs and errors that may affect the gameplay.
+Key assumptions for this project:
+- The NandLand GO Board is fully operational.
+- Verilog code is correctly implemented and works as expected on the FPGA.
+- The functional requirements, such as movement and collisions, are properly implemented.
+- The game provides smooth performance without critical bugs or errors.
 
 ---
 ## II. Technology Presentation
 ---
 
 ### 1. NandLand GO Board
-NandLand GO Board is a hardware platform that allows users to develop and test digital circuits using Verilog. The board features an FPGA chip, LEDs, buttons, VGA connector and other components that can be used to create interactive projects. The board is designed to be user-friendly and versatile, making it ideal for educational purposes and hobbyist projects.
+The NandLand GO Board is an FPGA development board used for creating digital circuits with Verilog. It features LEDs, push buttons, a VGA connector, and other components that make it ideal for hardware projects.
 
-#### C) Materials specifications
+> *GO Board pinout can be found [here](./Appendix/Go%20Board%20V1.pdf).*
+
+#### A) Materials specifications
 
 The NandLand GO Board features the following components:
 
 ##### ➭ <ins> FPGA </ins>
-**Reference:** ICE40HX1K-VQ100
-**Number:** 1
-**Total memory bits:** 65536
-
-The FPGA chip is the core component of the board, responsible for executing the Verilog code and controlling the hardware components. The FPGA chip is programmable, allowing users to develop custom digital circuits and applications.
+**FPGA (ICE40HX1K-VQ100):** The board's programmable chip, responsible for running the Verilog code. It contains 65,536 memory bits.
 
 <div style="text-align:center">
     <img src="https://www.fpgakey.com/uploads/images/product/default/ice40hx1k-vq100.jpg" alt="FPGA chip" width="200"/>
@@ -87,54 +141,42 @@ The FPGA chip is the core component of the board, responsible for executing the 
 > *All details about the chip can be found [here](./Appendix/ICE40HX1K-VQ100%20Family%20Datasheet.pdf)*
 
 ##### ➭ <ins> LEDs </ins>
-**Number:** 5
-
-The board features 5 LEDs, 4 of which are fully programmable and can be used to display information or status indicators and 1 is used as a power indicator.
+**LEDs:** 4 programmable LEDs and 1 power indicator.
 
 <div style="text-align:center">
     <img src="https://vcclite.com/wp-content/uploads/2019/07/surface-mount-led-category.jpg" alt="LEDs" width="200"/>
 </div>
 
 ##### ➭ <ins> 7-Segment Display </ins>
-**Number:** 2
-
-The board features 2 7-segment displays that can be used to display numbers and characters. The 7-segment displays can be programmed to show score, time, or other information relevant to the application.
+**7-Segment Displays:** Two displays for showing numeric values, such as score or timer.
 
 <div style="text-align:center">
     <img src="https://s.alicdn.com/@sc04/kf/Hec153fd61fee4ed9b73ed33af60f30ed5.jpg_720x720q50.jpg" alt="7-segment display" width="200"/>
 </div>
 
 ##### ➭ <ins> Push Buttons </ins>
-**Number:** 4
-
-The board features 4 buttons that can be used as input devices for interacting with the application. The buttons can be programmed to perform specific actions or trigger events in the application.
+**Push Buttons:** Four input buttons, useful for player movement and interactions.
 
 <div style="text-align:center">
     <img src="https://cdn.sparkfun.com/assets/parts/2/6/2/9/09190-03-L.jpg" alt="Push button" width="200"/>
 </div>
 
 ##### ➭ <ins> VGA Connector </ins>
-**Number:** 1
-
-The board features a VGA connector that can be used to connect an external display to the board. The VGA connector allows users to display graphics and visuals on a monitor or screen.
+**VGA Connector:** A port for connecting an external monitor to display the game.
 
 <div style="text-align:center">
     <img src="https://hubtronics.in/image/cache/data/0-2144-1-550x550w.jpg" alt="VGA connector female" width="200"/>
 </div>
 
 ##### ➭ <ins> Micro USB Connector </ins>
-**Number:** 1
-
-The board features a micro USB connector that can be used to power the board and program the FPGA chip. The micro USB connector allows users to connect the board to a computer and upload Verilog code to the FPGA chip.
+**Micro USB Connector:** Used for power supply and FPGA programming.
 
 <div style="text-align:center">
     <img src="https://www.elecbee.com/image/cache/catalog/Connectors/USB-HDMI-Connector/USB-Connector/MICRO-USB-Connector/micro-usb-female-pinout-dip-565-type-b-smt-5-pin-for-phone-1225-0-500x500.jpg" alt="Micro USB connector female" width="200"/>
 </div>
 
 ##### ➭ <ins> PMOD Connector </ins>
-**Number:** 1
-
-The board features a PMOD connector that can be used to connect external modules and peripherals to the board. The PMOD connector allows users to expand the functionality of the board by adding additional components.
+**PMOD Connector:** Expands the board's functionality by allowing external modules.
 
 <div style="text-align:center">
     <img src="https://m.media-amazon.com/images/I/41xaDxSKkcL._AC_UF1000,1000_QL80_.jpg" alt="PMOD connector female" width="200"/>
@@ -144,19 +186,18 @@ The board features a PMOD connector that can be used to connect external modules
 Board schematics can be found in appendix [here].
 
 #### B) Setup
-To use the board a configuration of the computer is required. The tutorial can be found [here](https://nandland.com/set-up-apio-fpga-build-and-program/).
+Follow the [setup tutorial](https://nandland.com/set-up-apio-fpga-build-and-program/) to configure your development environment for the NandLand GO Board.
 
 ### 2. Verilog and SystemVerilog
 
 #### A) Language
 
-For this project, the team will use Verilog to develop the game logic and implement the features of the Frogger game. We will also use SystemVerilog to create testbenches and verify the functionality of the Verilog code.
+The project will use Verilog to design and implement the game's logic, while SystemVerilog will be employed to create testbenches for verifying the Verilog modules.
 
 ##### ➭ <ins> Verilog </ins>
-Verilog is a hardware description language used to model electronic systems. It is commonly used in digital circuit design and FPGA programming to describe the behavior of hardware components and circuits. Verilog is a powerful and versatile language that allows users to create complex digital circuits and applications.
+Verilog is a popular hardware description language for designing digital circuits. It enables the modeling and simulation of hardware components like logic gates and flip-flops.
 
-Here is an example of a simple Verilog code that implements a basic logic gate:
-
+Here's an example of a simple AND gate in Verilog:
 ```verilog
 // This module implements an AND gate
 module and_gate(input a, input b, output y);
@@ -164,13 +205,12 @@ module and_gate(input a, input b, output y);
 endmodule
 ```
 
-More details about Verilog can be found [here](https://www.nandland.com/verilog/tutorials/tutorial-introduction-to-verilog-for-beginners.html).
+For more details, see the Verilog [introduction tutorial](https://www.nandland.com/verilog/tutorials/tutorial-introduction-to-verilog-for-beginners.html).
 
 ##### ➭ <ins> SystemVerilog </ins>
-SystemVerilog is an extension of Verilog that adds new features and capabilities to the language. It includes enhancements such as object-oriented programming, constrained random testing, and assertions, making it a powerful tool for developing complex digital systems.
+SystemVerilog extends Verilog, adding features like object-oriented programming and advanced testing tools. It is particularly useful for creating testbenches to verify Verilog designs.
 
-Here is an example of a simple SystemVerilog code that implements a basic counter:
-
+Example of a counter using SystemVerilog:
 ``` verilog
 // This module implements a simple counter
 module counter;
@@ -198,6 +238,7 @@ To write and test Verilog code, users can use a text editor or an integrated dev
 Every conventions used in the project are detailed in the [appendix 1 - project conventions](/Documents/TechnicalSpecifications/Appendix/projectConventions.md).
 
 ### 2. Display
+The visual representation of the game is one of the core components, as it engages the player and enables interaction. Below are the key details regarding the display system for the Frogger game.
 
 #### A) Graphics
 The game graphics are designed to provide a visually appealing and engaging experience for the player. These graphics include elements such as the player character, enemies, obstacles, and background scenery to create an immersive game environment.
@@ -205,7 +246,7 @@ The game graphics are designed to provide a visually appealing and engaging expe
 > *Details of the graphics are provided in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md).*
 
 #### B) Display Resolution
-The game will run on the NandLand GO Board's display, with a resolution of 640x480 pixels. Game elements will be appropriately scaled and positioned to fit the screen size, ensuring an optimal viewing experience for the player.
+The game will run on the NandLand GO Board's display, with a resolution of **640x480 pixels**. Game elements will be appropriately scaled and positioned to fit the screen size, ensuring an optimal viewing experience for the player.
 
 The Verilog code will configure the display resolution to ensure proper rendering of game elements on the screen. The game logic will handle adjustments to the display resolution to ensure that the graphics and gameplay remain aligned with the intended visual presentation.
 
@@ -275,11 +316,36 @@ graph TD
     Z --> AB[Update Player Position]
 ```
 
-#### B) Enemy Movement
+#### B) Enemies Movement
+Enemies will move horizontally across the screen, either left-to-right or right-to-left, depending on the lane they occupy.
 
-##### ➭ <ins>Enemy Pseudo Random Generation</ins>
+##### ➭ <ins>Enemies Pseudo Random Generation</ins>
+Enemies will be generated at pseudo-random intervals. The generation logic will be handled by a linear feedback shift register (LFSR), a simple pseudo-random number generator. This ensures that enemies appear at different times but follow a controlled pattern.
 
-##### ➭ <ins>Enemy Movement</ins>
+```mermaid
+    graph TD
+    Start[Start] --> LFSR[Linear Feedback Shift Register]
+    LFSR -->|Generates pseudo-random number| Timer[Enemy Spawn Timer]
+    Timer -->|Interval reached| GenerateEnemy[Generate Enemy]
+    GenerateEnemy --> UpdateGame[Update Game State]
+    UpdateGame --> LFSR
+```
+
+##### ➭ <ins>Enemies Movements</ins>
+
+- **Movement Speed**: Each lane will have enemies with a specific, predefined speed. For instance, cars may travel faster than logs. This speed is consistent for all enemies within a given lane but can vary between different lanes to create dynamic movement patterns.
+  
+- **Wrap-Around Movement**: When an enemy exits one side of the screen, it will seamlessly reappear on the opposite side, simulating continuous, looping movement. This ensures the game’s flow remains uninterrupted as enemies continuously traverse the screen.
+
+```mermaid
+graph TD
+    A[Initialize Enemy Position] --> B[Move Enemy]
+    B --> C[Is Enemy Off Screen?]
+    C --> |No| D[Continue Moving]
+    C --> |Yes| E[Reposition Enemy to Opposite Side]
+    E --> F[Update Enemy Position]
+    F --> B
+```
 
 ### 4. Collisions
 

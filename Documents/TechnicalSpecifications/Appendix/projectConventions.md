@@ -17,6 +17,9 @@
 
 ## Table of Contents
 
+<details>
+<summary><b>Click to expand</b></summary>
+
 - [Appendix 1 Project Conventions - FPGA \[Team 6\]](#appendix-1-project-conventions---fpga-team-6)
   - [Document Control](#document-control)
     - [Document Information](#document-information)
@@ -34,6 +37,7 @@
     - [1. General Coding Standards](#1-general-coding-standards)
     - [2. Variables Naming Conventions](#2-variables-naming-conventions)
     - [3. Comments](#3-comments)
+</details>
 
 ## I. Introduction
 
