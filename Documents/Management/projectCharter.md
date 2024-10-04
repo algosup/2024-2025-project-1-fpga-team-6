@@ -30,7 +30,9 @@
   - [Resources and Constraints](#resources-and-constraints)
     - [Resources](#resources)
     - [Constraints](#constraints)
-  - [Budget](#budget)
+  - [Budget and Payment Plan](#budget-and-payment-plan)
+    - [Budget](#budget)
+    - [Payment Plan](#payment-plan)
   - [Overall plan](#overall-plan)
   - [Glossary](#glossary)
 
@@ -116,13 +118,22 @@ Here are the milestones according to the deliverables:
 - **Verilog Language**: The game logic and hardware interfacing must be implemented using Verilog, requiring the team to adhere to the constraints and limitations of this hardware description language.
 - **Development Time**: The project has a strict deadline (2024/10/21), meaning that the team needs to manage their time efficiently to complete all deliverables on schedule.
 
-## Budget
+## Budget and Payment Plan
+
+### Budget
 
 As we're tying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
 All the pruchases will be endorsed by the team members at first.
 
 **[Last Update: 2024/10/2]**
 The total cost of the project is <u>13.70 Euros TTC</u>. 
+
+### Payment Plan
+
+All along the project, the team members will be treated as real employees.
+This is why a payment plan needs to exist, specifying all the details of their salary.
+
+All the details will be transcribed [here](./paymentPlan.md).
 
 ## Overall plan
 
