@@ -118,7 +118,7 @@ Make a recreation of the game Frogger while adding our own touch to it.
 
 | Out of scope |
 | --- |
-| Each level don't increase in difficulty |
+| Each level doesn't increase in difficulty |
 | Publish the game for commercial purposes |
 | Implement scoring mechanic |
 
@@ -232,7 +232,7 @@ Sometimes, an insect can spawn on one water cell of the finish line.
 
 <img src="Images/froggerInsect.png" width="20%"><br>
 
-When going on it, the player gain extra points (see [points table](#scoring)).
+When going on it, the player gains extra points (see [points table](#scoring)).
 
 #### Lady frogs
 
@@ -240,7 +240,7 @@ As well as the insect, a lady frog can spawn randomly.
 
 <img src="Images/froggerLadyFrog.png" width="20%"><br>
 
-When the player steps on it, he grabs the lady frog, to escort it to the finish line. If the player successfully escorted the lady frog, the player gain extra points (see [points table](#scoring)).
+When the player steps on it, he grabs the lady frog, to escort it to the finish line. If the player successfully escorted the lady frog, the player gains extra points (see [points table](#scoring)).
 
 The lady frog has the same movement animation than the frog the player is playing.
 
@@ -444,8 +444,9 @@ The font that we will use will be a redesign of the original font, in  blue, whi
 <img src="Images/font/zero.png" width="6%">
 
 
-
 When starting the game, the player will get to a menu, where he can choose to play or to quit. While in game, you can open a pause menu, to either go back to the main menu, restart or continue.
+
+Because we are using a VGA display, we will not implement sounds in our game.
 
 ### The game
 
