@@ -76,7 +76,7 @@
 | Tech Lead | Maxime CARBON |  |  |
 | Software Developer | Elone DELILLE |  |  |
 | Quality Assurance | Axel DAVID |  |  |
-| Technical Writer | Pierre GORIN |  |  |
+| Technical Writer | Pierre GORIN | ✅ | 10/07/2024 |
 
 <br><br>
 
