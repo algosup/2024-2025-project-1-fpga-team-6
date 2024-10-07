@@ -2,61 +2,60 @@
 
 ## Table of content
 
+- [Functional Specifications](#functional-specifications)
+  - [Table of content](#table-of-content)
 - [Document control](#document-control)
-    - [Document information](#document-information)
-    - [Document validation](#document-validation)
+  - [Document information](#document-information)
+  - [Document validation](#document-validation)
 - [A. Introduction](#a-introduction)
-    - [1. Overview](#1-overview)
-    - [2. Project definition](#2-project-definition)
-        - [Vision](#vision)
-        - [Objectives](#objectives)
-        - [Scope](#scope)
-        - [Deliverables](#deliverables)
-    - [3. Project organization](#3-project-organization)
-        - [Stakeholders](#stakeholders)
-        - [Project team](#project-team)
+  - [1. Overview](#1-overview)
+  - [2. Project definition](#2-project-definition)
+    - [Vision](#vision)
+    - [Objectives](#objectives)
+    - [Scope](#scope)
+    - [Deliverables](#deliverables)
+  - [3. Project organization](#3-project-organization)
+    - [Stakeholders](#stakeholders)
+    - [Project team](#project-team)
 - [B. Functional requirements](#b-functional-requirements)
-    - [1. Frogger overview](#1-frogger-overview)
-        - [History](#history)
-        - [Gameplay](#gameplay)
-    - [2. Frogger breakdown](#2-frogger-breakdown)
-        - <a href="#FroggerInterface">Interface</a>
-            - [Grid](#grid)
-            - [Fonts](#fonts)
-            - [Score](#score)
-            - [Timer](#timer)
-        - [Environment](#environment)
-            - [Finish line](#finish-line)
-            - [Insects](#insects)
-            - [Lady frogs](#lady-frogs)
-            - [Road](#road)
-            - [Cars](#cars)
-            - [River](#river)
-            - [Wood logs](#wood-logs)
-            - [Turtles](#turtles)
-            - [Crocodiles](#crocodiles)
-            - [Snakes](#snakes)
-            - [Otters](#otters)
-            - ["Safe zones"](#safe-zones)
-        - [Player](#player)
-            - [Movements](#movements)
-            - [Lives and death](#lives-and-death)
-            - [Scoring](#scoring)
-            - [2nd player](#2nd-player)
-        - [Sounds](#sounds)
-    - [3. Our version](#3-our-version)
-        - <a href="#OurInterface">Interface</a>
-        - [The Game](#the-game)
-            - [The environment](#the-environment)
-            - [The player](#the-player)
-        - [The Console](#the-console)
-    - [4. Personas definition](#4-personas-definition)
+  - [1. Frogger overview](#1-frogger-overview)
+    - [History](#history)
+    - [Gameplay](#gameplay)
+  - [2. Frogger breakdown](#2-frogger-breakdown)
+      - [Grid](#grid)
+      - [Fonts](#fonts)
+      - [Score](#score)
+      - [Timer](#timer)
+    - [Environment](#environment)
+      - [Finish line](#finish-line)
+      - [Insects](#insects)
+      - [Lady frogs](#lady-frogs)
+      - [Road](#road)
+      - [Cars](#cars)
+      - [River](#river)
+      - [Wood logs](#wood-logs)
+      - [Turtles](#turtles)
+      - [Crocodiles](#crocodiles)
+      - [Otters](#otters)
+      - [Snakes](#snakes)
+      - ["Safe zones"](#safe-zones)
+    - [Player](#player)
+      - [Movements](#movements)
+      - [Lives and death](#lives-and-death)
+      - [Scoring](#scoring)
+      - [2nd player](#2nd-player)
+    - [Sounds](#sounds)
+  - [3. Our version](#3-our-version)
+    - [The game](#the-game)
+      - [The environment](#the-environment)
+      - [The player](#the-player)
+    - [The console](#the-console)
+  - [4. Personas definition](#4-personas-definition)
 - [C. Non functional requirements](#c-non-functional-requirements)
-    - [1. Operability](#1-operability)
-    - [2. Delivery](#2-delivery)
-    - [3. Maintainability](#3-maintainability)
+  - [1. Operability](#1-operability)
+  - [2. Delivery](#2-delivery)
+  - [3. Maintainability](#3-maintainability)
 - [D. Glossary](#d-glossary)
-<br><br>
 
 
 # Document control
@@ -72,11 +71,11 @@
 
 | Role | Name | Signature | Date |
 | --- | --- | --- | --- |
-| Project Manager | Enzo GUILLOUCHE |  |  |
-| Tech Lead | Maxime CARBON |  |  |
-| Software Developer | Elone DELILLE |  |  |
-| Quality Assurance | Axel DAVID |  |  |
-| Technical Writer | Pierre GORIN |  |  |
+| Project Manager | Enzo GUILLOUCHE | ✅ | 10/07/2024 |
+| Technical Leader | Maxime CARON | ✅ | 10/07/2024 |
+| Software Developer | Elone DELILLE | ✅ | 10/07/2024 |
+| Quality Assurance | Axel DAVID | ✅ | 10/07/2024 |
+| Technical Writer | Pierre GORIN | ✅ | 10/07/2024 |
 
 <br><br>
 
@@ -128,11 +127,11 @@ Make a recreation of the game Frogger while adding our own touch to it.
 
 | Name | Type | Deadline | Link |
 |---|---|---|---|
-| Functional specifications document | Document (markdown) | 10/07/2024 | [functionalSpecifications.md](functional_specifications.md) |
-| Technical specifications document | Document (markdown) | 10/14/2024 | [technicalSpecifications.md](../technical/technical_specifications.md)|
-| Weekly reports | Document (markdown) | Every Friday | [weeklyReports/](../management/weekly_reports)|
-| Test plan | Document (markdown) | 10/21/2024 | [testPlan.md](../quality/) |
-| User manual | Document (pdf) | 10/21/2024 | [userManual.md](../quality/) |
+| Functional specifications document | Document (markdown) | 10/07/2024 | [functionalSpecifications.md](functionalSpecifications.md) |
+| Technical specifications document | Document (markdown) | 10/14/2024 | [technicalSpecifications.md](../TechnicalSpecifications/technicalSpecifications.md)|
+| Weekly reports | Document (markdown) | Every Friday | [weeklyReports/](../Management/WeeklyReports)|
+| Test plan | Document (markdown) | 10/21/2024 | [testPlan.md](../Quality/) |
+| User manual | Document (pdf) | 10/21/2024 | [userManual.md](../Quality/) |
 
 ## 3. Project organization
 
