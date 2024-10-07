@@ -50,7 +50,7 @@
             - [The environment](#the-environment)
             - [The player](#the-player)
         - [The Console](#the-console)
-    - [4. Personas definition](#personas-definition)
+    - [4. Personas definition](#4-personas-definition)
 - [C. Non functional requirements](#c-non-functional-requirements)
     - [1. Operability](#1-operability)
     - [2. Delivery](#2-delivery)
