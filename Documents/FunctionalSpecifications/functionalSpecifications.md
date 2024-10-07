@@ -127,11 +127,11 @@ Make a recreation of the game Frogger while adding our own touch to it.
 
 | Name | Type | Deadline | Link |
 |---|---|---|---|
-| Functional specifications document | Document (markdown) | 10/07/2024 | [functionalSpecifications.md](functional_specifications.md) |
-| Technical specifications document | Document (markdown) | 10/14/2024 | [technicalSpecifications.md](../technical/technical_specifications.md)|
-| Weekly reports | Document (markdown) | Every Friday | [weeklyReports/](../management/weekly_reports)|
-| Test plan | Document (markdown) | 10/21/2024 | [testPlan.md](../quality/) |
-| User manual | Document (pdf) | 10/21/2024 | [userManual.md](../quality/) |
+| Functional specifications document | Document (markdown) | 10/07/2024 | [functionalSpecifications.md](functionalSpecifications.md) |
+| Technical specifications document | Document (markdown) | 10/14/2024 | [technicalSpecifications.md](../TechnicalSpecifications/technicalSpecifications.md)|
+| Weekly reports | Document (markdown) | Every Friday | [weeklyReports/](../Management/WeeklyReports)|
+| Test plan | Document (markdown) | 10/21/2024 | [testPlan.md](../Quality/) |
+| User manual | Document (pdf) | 10/21/2024 | [userManual.md](../Quality/) |
 
 ## 3. Project organization
 
