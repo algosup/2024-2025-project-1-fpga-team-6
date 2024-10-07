@@ -30,7 +30,7 @@
             - [Insects](#insects)
             - [Lady frogs](#lady-frogs)
             - [Road](#road)
-            - [Cars](#Cars)
+            - [Cars](#cars)
             - [River](#river)
             - [Wood logs](#wood-logs)
             - [Turtles](#turtles)
