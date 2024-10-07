@@ -49,6 +49,7 @@
         - [The Game](#the-game)
             - [The environment](#the-environment)
             - [The player](#the-player)
+        - [The Console](#the-console)
     - [4. Personas definition](#personas-definition)
 - [C. Non functional requirements](#c-non-functional-requirements)
     - [1. Operability](#1-operability)
@@ -64,7 +65,7 @@
 
 | Document name | Document owner | Date of last update |
 | --- | --- | --- |
-| Functional specifications | Evan UHRING | 10/4/2024 |
+| Functional specifications | Evan UHRING | 10/7/2024 |
 
 
 ## Document validation
@@ -157,7 +158,7 @@ Make a recreation of the game Frogger while adding our own touch to it.
 <br><br>
 
 
-# B. Functional requirement
+# B. Functional requirements
 
 ## 1. Frogger overview
 
@@ -462,7 +463,7 @@ We will use 3 different sprites for the cars, each of them fitting in one cell o
 To stay close to the original game, we decided to add the river, in which we will implement wood logs and crocodiles, as well as a snake, that works differently from the original game compared to the wood logs and the crocodiles. The snakes will take multiple cells, on which the head will be the lead of the movement, and the body will follow the head.
 Like the crocodiles, the player will be able to step on the snakes' body but not on the head.
 
-For the wood logs and the crocodiles, the sprites that we will use are redesign of the original ones, but the snakes' sprites will be our own creation, and will be able to be shown in different sizes. They also will have different speeds, differentiated into three speeds, low, medium and high. The snakes has a low speed, crocodiles has a fast speed en wood logs has a medium speed.
+For the wood logs and the crocodiles, the sprites that we will use are redesign of the original ones, but the snakes' sprites will be our own creation, and will be able to be shown in different sizes. They also will have different speeds, differentiated into three speeds, low, medium and high. The snakes has a low speed, crocodiles has a fast speed and wood logs has a medium speed.
 
 <i style="font-size: 12px">Back of the log, middle, front in the correct order</i><br>
 <img src="Images/woodLogBack.png" width="15%"> <img src="Images/woodLogMiddle.png" width="15%"> <img src="Images/woodLogFront.png" width="15%"><br><br>
@@ -519,6 +520,18 @@ The frog will be a redesign of the original from, to fit the up-scale of the gam
 The player will be able to move in four directions: up, down, left and right.
 
 When the player gets ran over by a car, he will get a game over menu where he can either restart or quit the game.
+
+### The console
+
+To make the project a part of our attention, we will create everything needed to make it looks like a console, named "Lilypad" n reference of the player playing a frog. 3D models of the housing for the FPGA are made, as well for a controller that will be able to be plugged to the FPGA, to have something more comfortable to hold.
+
+<i style="font-size: 12px">3D model of the housing for the FPGA</i><br>
+<img alt="TO DO > housing lilypad" src="Images/.png" width="20%">
+
+<i style="font-size: 12px">3D models of the controller</i><br>
+<img src="Images/controllerTop.png" width="30%"><br>
+<img src="Images/controllerCase.png" width="30%">
+
 
 ## 4. Personas definition
 
