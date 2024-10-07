@@ -73,7 +73,7 @@
 | Role | Name | Signature | Date |
 | --- | --- | --- | --- |
 | Project Manager | Enzo GUILLOUCHE |  |  |
-| Tech Lead | Maxime CARBON |  |  |
+| Tech Lead | Maxime CARON | ✅ | 10/07/2024 |
 | Software Developer | Elone DELILLE |  |  |
 | Quality Assurance | Axel DAVID |  |  |
 | Technical Writer | Pierre GORIN | ✅ | 10/07/2024 |
