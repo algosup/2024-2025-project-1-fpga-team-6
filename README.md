@@ -21,6 +21,14 @@ Team 6 involves few coworkers, handling different roles:
 
 [Here](https://github.com/algosup/2024-2025-project-1-fpga-team-6/graphs/contributors) are their contributions to the project!
 
+#### The project's documentation
+
+- [Weekly Reports](./Documents/Management/WeeklyReports/cumulative.md)
+- [Functional specifications](./Documents/FunctionalSpecifications/functionalSpecifications.md)
+- [Technical specifications](./Documents/TechnicalSpecifications/technicalSpecifications.md)
+- [Test Plan](./Documents/TestPlan/testPlan.md)
+- [User Manual](./Documents/UserManual/userManual.md)
+
 ## What is Frogger? 🐸
 
 - The goal of the game is to move a frog from the bottom of the screen to the top. There’s only one problem: The frog is trying to cross a busy highway filled with cars! You must carefully control the frog to cross the road without getting hit by a car.
