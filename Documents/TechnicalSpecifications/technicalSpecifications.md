@@ -103,7 +103,7 @@
 
 This document outlines the technical aspects of the Frogger game project, building upon the functional specifications. It defines the technical details, scope, and features of the game to ensure that the development follows the guidelines and meets project objectives.
 
-To gain a full understanding of the project, it is recommended to first review the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md).
+To gain a full understanding of the project, it is recommended to first review the [Functional Specifications](/Documents/FunctionalSpecifications/functionalSpecifications.md).
 
 This document also serves as a technical reference for development, detailing conventions, tools, and methodologies that will enhance project scalability and maintainability.
 
