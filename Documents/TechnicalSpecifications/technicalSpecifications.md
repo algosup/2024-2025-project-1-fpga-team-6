@@ -48,7 +48,7 @@
         - [➭  Verilog ](#--verilog-)
         - [➭  SystemVerilog ](#--systemverilog-)
       - [B) Working Environment](#b-working-environment)
-  - [III. Technical Specifications](#iii-technical-specifications)
+  - [III. Frogger Technical Specifications](#iii-frogger-technical-specifications)
     - [1. Project Conventions](#1-project-conventions)
     - [2. Display](#2-display)
       - [A) Graphics](#a-graphics)
@@ -69,10 +69,14 @@
         - [➭ Water Collisions](#-water-collisions)
         - [➭ Wall Collisions](#-wall-collisions)
         - [➭ Enemy Collisions](#-enemy-collisions)
-      - [B) Enemy Collisions Behaviors](#b-enemy-collisions-behaviors)
+      - [C) Enemy Collisions Behaviors](#c-enemy-collisions-behaviors)
     - [5. Win Condition and Leveling System](#5-win-condition-and-leveling-system)
       - [A) Win condition](#a-win-condition)
       - [B) Leveling System](#b-leveling-system)
+  - [IV. Console Technical Specifications](#iv-console-technical-specifications)
+    - [1. Controllers](#1-controllers)
+      - [A) Controller Inputs](#a-controller-inputs)
+      - [B) Controller Electronics](#b-controller-electronics)
 
 </details>
 
@@ -183,7 +187,7 @@ The NandLand GO Board features the following components:
 </div>
 
 
-Board schematics can be found in appendix [here].
+Board schematics can be found in appendix [here](./Appendix/Go%20Board%20V1.pdf).
 
 #### B) Setup
 Follow the [setup tutorial](https://nandland.com/set-up-apio-fpga-build-and-program/) to configure your development environment for the NandLand GO Board.
@@ -231,7 +235,7 @@ endmodule
 To write and test Verilog code, users can use a text editor or an integrated development environment (IDE) such as Visual Studio Code, Xilinx Vivado, or Quartus Prime. These tools provide features such as syntax highlighting, code completion, and debugging capabilities to help users write and test Verilog code efficiently.
 
 ---
-## III. Technical Specifications
+## III. Frogger Technical Specifications
 ---
 
 ### 1. Project Conventions
@@ -282,38 +286,52 @@ Each player movement is managed by the movement module. Every movement is contro
 ##### ➭ <ins>Player Inputs for Movements</ins>
 The player can move using the following inputs:
 - **SW1 (Go Board switch 1):** The player moves up by one cell.
+- **Controller red button (PMOD PIN 4):** The player moves up by one cell.
+<br/>
+
 - **SW4 (Go Board switch 4:** The player moves down by one cell.
+- **Controller yellow button (PMOD PIN 2):** The player moves down by one cell.
+<br/>
+
 - **SW2 (Go Board switch 2:** The player moves left by one cell.
+- **Controller blue button (PMOD PIN 1):** The player moves left by one cell.
+<br/>
+
 - **SW3 (Go Board switch 3:** The player moves right by one cell.
+- **Controller green button (PMOD PIN 3):** The player moves right by one cell.
 
 ##### ➭ <ins>Player Movement Logic</ins>
 The player movement logic will be implemented in Verilog following the activity diagram below:
 
 ```mermaid
 graph TD
+    AA[Controller red button Pressed] --> B
     A[SW1 Pressed] --> B[Check If Player Can Move Up]
     B --> D[Is Player Can Move UP?]
     D --> |Yes| E[Move Up]
     D --> |No| F[Do Nothing]
     E --> G[Update Player Position]
 
+    HH[Controller yellow button Pressed] --> I
     H[SW4 Pressed] --> I[Check If Player Can Move Down]
     I --> K[Is Player Can Move Down?]
     K --> |Yes| L[Move Down]
     K --> |No| M[Do Nothing]
     L --> N[Update Player Position]
 
+    OO[Controller blue button Pressed] --> P
     O[SW2 Pressed] --> P[Check If Player Can Move Left]
     P --> R[Is Player Can Move Left?]
     R --> |Yes| S[Move Left]
     R --> |No| T[Do Nothing]
     S --> U[Update Player Position]
 
+    VV[Controller green button Pressed] --> W
     V[SW3 Pressed] --> W[Check If Player Can Move Right]
     W --> Y[Is Player Can Move Right?]
     Y --> |Yes| Z[Move Right]
-    Y --> |No| AA[Do Nothing]
-    Z --> AB[Update Player Position]
+    Y --> |No| YY[Do Nothing]
+    Z --> ZZ[Update Player Position]
 ```
 
 #### B) Enemies Movement
@@ -394,7 +412,7 @@ graph TD
 
 ##### ➭ <ins>Enemy Collisions</ins>
 
-#### B) Enemy Collisions Behaviors
+#### C) Enemy Collisions Behaviors
 
 Enemy collisions will be managed by the collision module. The collision module will check for collisions between the player and enemies, obstacles, and other game elements. When a collision is detected, the appropriate action will be taken based on the collision type.
 
@@ -428,3 +446,24 @@ graph TD
     E --> F[Update Level Display]
     C --> |No| G[Do Nothing]
 ```
+
+## IV. Console Technical Specifications
+
+### 1. Controllers
+
+The game will be also playable with controllers connected to the PMOD connector. The controllers will be used to move the player character in the game. The controllers will be connected to the PMOD connector and will be used to control the player character's movement in the game.
+
+#### A) Controller Inputs
+
+The controllers will provide the following inputs for player movement:
+
+- **Red Button:** Move the player character up by one cell.
+- **Yellow Button:** Move the player character down by one cell.
+- **Blue Button:** Move the player character left by one cell.
+- **Green Button:** Move the player character right by one cell.
+
+The controller inputs will be mapped to the corresponding player movements in the game. The Verilog code will read the controller inputs via the PMOD connector and update the player character's position based on the input received.
+
+*More details about the movement logic can be found in the [Movement section](#3-movement).*
+
+#### B) Controller Electronics
