@@ -247,7 +247,7 @@ The visual representation of the game is one of the core components, as it engag
 #### A) Graphics
 The game graphics are designed to provide a visually appealing and engaging experience for the player. These graphics include elements such as the player character, enemies, obstacles, and background scenery to create an immersive game environment.
 
-> *Details of the graphics are provided in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalspecifications.md).*
+> *Details of the graphics are provided in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalSpecifications.md).*
 
 #### B) Display Resolution
 The game will run on the NandLand GO Board's display, with a resolution of **640x480 pixels**. Game elements will be appropriately scaled and positioned to fit the screen size, ensuring an optimal viewing experience for the player.
