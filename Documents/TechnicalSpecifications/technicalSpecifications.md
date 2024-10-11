@@ -77,6 +77,9 @@
     - [1. Controllers](#1-controllers)
       - [A) Controller Inputs](#a-controller-inputs)
       - [B) Controller Electronics](#b-controller-electronics)
+    - [2. 3D Models](#2-3d-models)
+      - [A) Controller and Console 3D Models](#a-controller-and-console-3d-models)
+      - [B) 3D Printing](#b-3d-printing)
 
 </details>
 
@@ -451,19 +454,51 @@ graph TD
 
 ### 1. Controllers
 
-The game will be also playable with controllers connected to the PMOD connector. The controllers will be used to move the player character in the game. The controllers will be connected to the PMOD connector and will be used to control the player character's movement in the game.
+The game will also be playable using controllers connected to the PMOD connector. These controllers will allow the player to control the movement of the player character in the game. The Verilog code will read the inputs from the controllers via the PMOD connector to update the character's position.
 
 #### A) Controller Inputs
 
-The controllers will provide the following inputs for player movement:
+The controllers provide the following inputs for player movement:
 
-- **Red Button:** Move the player character up by one cell.
-- **Yellow Button:** Move the player character down by one cell.
-- **Blue Button:** Move the player character left by one cell.
-- **Green Button:** Move the player character right by one cell.
+- **Red Button:** Moves the player character up by one cell.
+- **Yellow Button:** Moves the player character down by one cell.
+- **Blue Button:** Moves the player character left by one cell.
+- **Green Button:** Moves the player character right by one cell.
 
-The controller inputs will be mapped to the corresponding player movements in the game. The Verilog code will read the controller inputs via the PMOD connector and update the player character's position based on the input received.
+These inputs are mapped to the corresponding player movements. The Verilog code will handle reading these inputs and translate them into actions that adjust the player character's position on the screen.
 
-*More details about the movement logic can be found in the [Movement section](#3-movement).*
+> *More details about the movement logic can be found in the [Movement section](#3-movement).*
 
 #### B) Controller Electronics
+
+The controllers are connected to the PMOD connector on the NandLand GO Board, which provides a convenient interface for external modules. Each button on the controller corresponds to a specific player movement, allowing for precise control in the game.
+
+The controller's design uses simple push buttons wired to the PMOD pins on the FPGA board. When a button is pressed, the system registers the input, and the character's movement is updated accordingly.
+
+Below is the electronic schematic for the controller:
+
+<div style="text-align:center">
+    <img src="/Documents/TechnicalSpecifications/Appendix/controllerSchematic.png" alt="Controller Schematic" width="400"/>
+</div>
+
+### 2. 3D Models
+
+#### A) Controller and Console 3D Models
+
+As outlined in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalSpecifications.md), both the controller and the FPGA board will be housed in custom-designed casings. These casings have been designed using [Solidworks for Makers](https://www.solidworks.com/solution/solidworks-makers) to ensure proper fit and functionality.
+
+> *All components are available in the [3D Models folder](/3DModels).*
+
+#### B) 3D Printing
+
+The 3D models will be fabricated using a 3D printer. The physical components of the controller and the FPGA board casing will be created from the provided 3D models using PLA filament.
+
+Here are the recommended parameters for 3D printing:
+
+- **Filament:** PLA
+- **Layer Height:** 0.2mm
+- **Infill:** 15%
+- **Print Speed:** 60mm/s
+- **Temperature:** 200°C (Extruder), 60°C (Bed)
+
+The printed components will match the design specifications of the 3D models to ensure proper assembly and functionality.
