@@ -125,8 +125,18 @@ Here are the milestones according to the deliverables:
 As we're tying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
 All the pruchases will be endorsed by the team members at first.
 
+| Item                                   | Quantity | Unit Price TTC (€) | Total TTC (€) |
+|----------------------------------------|----------|----------------|-----------|
+| Cosses Nues (Bare Terminals)           | 10       | 3.80           | 3.80      |
+| Coffret Pinces à Cosses (Crimping Tool Kit) | 1       | 9.90           | 9.90      |
+| **Total**                              |          |                | 13.70     |
+
+| Item | Quantity | Unit Price HT (€) | **Total HT (€)** | TVA rates | TVA (€) | Unit Price TTC (€) | **Total TTC (€)** |
+|--------|----------|----------------|-----------|-----------|-----------|-----------|-----------|
+| CHUAZIZ 6 Sets Waterproof Connector Kit, 6-Pin DT Connectors, Automotive Electrical Wire Connector, Waterproof 6-Pin Male and Female Plugs | 4 | 13.32 | 53.28 | 20% | 10.68 | 15.99 | 63.96 |
+
 **[Last Update: 2024/10/2]**
-The total cost of the project is <u>13.70 Euros TTC</u>. 
+The total cost of the project is <u>77,66 Euros TTC</u>.
 
 ### Payment Plan
 
