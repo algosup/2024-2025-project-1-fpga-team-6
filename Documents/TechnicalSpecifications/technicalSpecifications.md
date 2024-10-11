@@ -6,7 +6,7 @@
 | ---------------- | ------------------------------------------- |
 | Document Owner   | Maxime CARON                                |
 | Creation Date    | 2024/09/23                                  |
-| Last Update Date | 2024/10/04                                  |
+| Last Update Date | 2024/10/11                                  |
 | Document Name    | Technical Specifications - Frogger [Team 6] |
 
 ### Document Version
@@ -15,6 +15,7 @@
 | 0.01       | Maxime CARON | 2024/09/23 | Document skeleton    |
 | 0.02       | Maxime CARON | 2024/10/01 | Reworked structure     |
 | 0.03       | Maxime CARON | 2024/10/02 | Add technical specifications |
+| 1.00       | Maxime CARON | 2024/10/11 | First complete version |
 
 ## Table of Contents
 
@@ -69,7 +70,7 @@
         - [➭ Water Collisions](#-water-collisions)
         - [➭ Wall Collisions](#-wall-collisions)
         - [➭ Enemy Collisions](#-enemy-collisions)
-      - [C) Enemy Collisions Behaviors](#c-enemy-collisions-behaviors)
+      - [C) Car Collisions Behaviors](#c-car-collisions-behaviors)
     - [5. Win Condition and Leveling System](#5-win-condition-and-leveling-system)
       - [A) Win condition](#a-win-condition)
       - [B) Leveling System](#b-leveling-system)
@@ -284,23 +285,23 @@ graph TD
 ### 3. Movement
 
 #### A) Player Movement 
-Each player movement is managed by the movement module. Every movement is controlled by the player input. The player can move up, down, left, and right. The player can also jump to the next cell in the direction he is moving.
+Each player movement is managed by the movement module. Every movement is controlled by the player input. The player can move forward, backward, left, and right on the screen.
 
 ##### ➭ <ins>Player Inputs for Movements</ins>
 The player can move using the following inputs:
-- **SW1 (Go Board switch 1):** The player moves up by one cell.
-- **Controller red button (PMOD PIN 4):** The player moves up by one cell.
+- **SW1 (Go Board switch 1):** The player moves forward by one cell.
+- **Controller red button (PMOD PIN 4):** The player moves forward by one cell.
 <br/>
 
-- **SW4 (Go Board switch 4:** The player moves down by one cell.
-- **Controller yellow button (PMOD PIN 2):** The player moves down by one cell.
+- **SW4 (Go Board switch 4):** The player moves backward by one cell.
+- **Controller yellow button (PMOD PIN 2):** The player moves backward by one cell.
 <br/>
 
-- **SW2 (Go Board switch 2:** The player moves left by one cell.
+- **SW2 (Go Board switch 2):** The player moves left by one cell.
 - **Controller blue button (PMOD PIN 1):** The player moves left by one cell.
 <br/>
 
-- **SW3 (Go Board switch 3:** The player moves right by one cell.
+- **SW3 (Go Board switch 3):** The player moves right by one cell.
 - **Controller green button (PMOD PIN 3):** The player moves right by one cell.
 
 ##### ➭ <ins>Player Movement Logic</ins>
@@ -308,28 +309,28 @@ The player movement logic will be implemented in Verilog following the activity 
 
 ```mermaid
 graph TD
-    AA[Controller red button Pressed] --> B
-    A[SW1 Pressed] --> B[Check If Player Can Move Up]
-    B --> D[Is Player Can Move UP?]
-    D --> |Yes| E[Move Up]
+    AA[Controller Red Button Pressed] --> B
+    A[SW1 Pressed] --> B[Check If Player Can Move Forward]
+    B --> D[Is Player Can Move Forward?]
+    D --> |Yes| E[Move Forward]
     D --> |No| F[Do Nothing]
     E --> G[Update Player Position]
 
-    HH[Controller yellow button Pressed] --> I
-    H[SW4 Pressed] --> I[Check If Player Can Move Down]
-    I --> K[Is Player Can Move Down?]
-    K --> |Yes| L[Move Down]
+    HH[Controller Yellow Button Pressed] --> I
+    H[SW4 Pressed] --> I[Check If Player Can Move Backward]
+    I --> K[Is Player Can Move Backward?]
+    K --> |Yes| L[Move Backward]
     K --> |No| M[Do Nothing]
     L --> N[Update Player Position]
 
-    OO[Controller blue button Pressed] --> P
+    OO[Controller Blue Button Pressed] --> P
     O[SW2 Pressed] --> P[Check If Player Can Move Left]
     P --> R[Is Player Can Move Left?]
     R --> |Yes| S[Move Left]
     R --> |No| T[Do Nothing]
     S --> U[Update Player Position]
 
-    VV[Controller green button Pressed] --> W
+    VV[Controller Green Button Pressed] --> W
     V[SW3 Pressed] --> W[Check If Player Can Move Right]
     W --> Y[Is Player Can Move Right?]
     Y --> |Yes| Z[Move Right]
@@ -415,7 +416,7 @@ graph TD
 
 ##### ➭ <ins>Enemy Collisions</ins>
 
-#### C) Enemy Collisions Behaviors
+#### C) Car Collisions Behaviors
 
 Enemy collisions will be managed by the collision module. The collision module will check for collisions between the player and enemies, obstacles, and other game elements. When a collision is detected, the appropriate action will be taken based on the collision type.
 
@@ -436,16 +437,16 @@ graph TD
 When the player reaches the top of the screen, the player wins the game. The win condition will be triggered when the player reaches the top row of the grid. Then the level will be incremented and the player will move to the next level.
 
 #### B) Leveling System
-The game will feature multiple levels, each with increasing difficulty and challenges. The difficulty is represented by the speed of the enemies, every 5 levels the speed of the enemies will increase by 5%. The speed of the enemies will stop increasing after level 30.
+The game will feature multiple levels, each with increasing difficulty and challenges. The difficulty is represented by the speed of the enemies, every 3 levels the speed of the enemies will increase by 5%. The speed of the enemies.
 
 The level system will be implemented in Verilog following the activity diagram below:
 
 ```mermaid
 graph TD
-    A[Player Wins] --> B[Check if Level is less than 30]
-    B --> C[Is Level less than 30?]
-    C --> |Yes| D[Increment Level]
-    D --> E[Increase Enemy Speed]
+    A[Player Wins] --> Z[Increase Level By 1]
+    Z --> B[Check if Level is a Multiple of 3]
+    B --> C[Is Level is a Multiple of 3?]
+    C --> |Yes| E[Increase Enemy Speed By 5%]
     E --> F[Update Level Display]
     C --> |No| G[Do Nothing]
 ```
@@ -460,8 +461,8 @@ The game will also be playable using controllers connected to the PMOD connector
 
 The controllers provide the following inputs for player movement:
 
-- **Red Button:** Moves the player character up by one cell.
-- **Yellow Button:** Moves the player character down by one cell.
+- **Red Button:** Moves the player character forward by one cell.
+- **Yellow Button:** Moves the player character backward by one cell.
 - **Blue Button:** Moves the player character left by one cell.
 - **Green Button:** Moves the player character right by one cell.
 
@@ -484,6 +485,8 @@ Below is the electronic schematic for the controller:
 ### 2. 3D Models
 
 #### A) Controller and Console 3D Models
+
+
 
 As outlined in the [Functional Specifications](/Documents/FunctionalSpecifications/functionalSpecifications.md), both the controller and the FPGA board will be housed in custom-designed casings. These casings have been designed using [Solidworks for Makers](https://www.solidworks.com/solution/solidworks-makers) to ensure proper fit and functionality.
 
