@@ -120,8 +120,7 @@ This third week was devoted to improving the technical specifications and optimi
 1. **Technical specifications are well advanced**
     - The team has been working well on the specifications and how we're gonna build the software.
 2. **The code is optimized**
-    - The code base has been reworked to use RAM blocks, allowing us to store sprites easily and implemented more features onto the game.
-3. **--**
+    - The code base has been reworked to use RAM blocks, allowing us to store sprites easily and implement more features onto the game.
 
 ## Challenges
 
