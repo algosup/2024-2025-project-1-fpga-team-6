@@ -9,7 +9,7 @@
 | Project Manager | Enzo GUILLOUCHE	|----------|--/10/2024|
 | Program Manager | Evan UHRING	|----------|--/10/2024|
 | Technical Lead | Maxime Caron |----------|--/10/2024|
-| Software Developer | Elon Delille |----------|--/10/2024|
+| Software Developer | Elone Delille |----------|--/10/2024|
 | Technical Writer | Pierre GORIN	|----------|--/10/2024|
 | Quality Assurance | Axel David |----------|--/10/2024|
 ## Table-of-Contents
@@ -38,18 +38,17 @@
       - [Collaborative Game-Testing](#collaborative-game-testing)
     - [c. Define Priorities](#c-define-priorities)
     - [d. Test Tool](#d-test-tool)
-      - [EDA Playground / System VERILOG](#eda-playground-system-verilog)
+      - [System VERILOG](#system-verilog)
+      - [EDA Playground](#eda-playground)
     - [e. Test Cases](#e-test-cases)
-    - [f. Bug Reports](#f-bug-reports)
-      - [By QA's](#by-qa's)
-      - [By Users](#by-users)
+    - [f. Test Reports](#f-test-reports)
+    - [g. Test Progression](#g-test-progression)
   - [4. Schedule Estimation](#4-schedule-estimation)
   - [5. Test Deliverables](#5-test-deliverables)
-  - [6. Conclusion and Acknowledgements](#6-conclusion-and-acknowledgements)
-  - [7. Glossary](#7-glossary)
+  - [6. Glossary](#6-glossary)
 
 ## 1-Introduction
-[comment]: <> ( 2    3    6    )
+[comment]: <> ( 3    6    )
 ### a-Overview
 We were tasked to recreate the game Frogger using an FPGA<sup><a href="#1">[1]</a></sup> using the verilog<sup><a href="#2">[2]</a></sup> language.
 
@@ -78,49 +77,118 @@ Verilog is the programming language we will use to program on FPGAs.
 <br><i>Take a look at verilog<sup><a href="#2">[2]</a></sup> in the glossary for more details.</i>
 
 ## 2-Test-Criteria
-<img  src="Images/test-criteria.png"  alt="test criteria" />
+we use test criteria to know what the Quality Assurance will have to test.
 
 #### Critical-Bugs
 Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encounter, we will suspend the tests until the bug is resolved.
 
 ### b-Entry-Criteria
+#### Functional-Tests-Entry-Criteria
+<img  src="Images/test-criteria.png"  alt="test criteria" />
+
+<i>You can look at the tests and tested functions [here](https://docs.google.com/spreadsheets/d/1XLz-dlMtIxBoBo31umZ3qVMH6ERHfQd5tnZYNTitfoE/edit?usp=sharing).</i>
+
+#### Unit-Tests-Entry-Criteria
+Every functions of the game will have to be tested.
 
 ### c-Exit-Criteria
+Before the product is deemed ready for distribution, several key benchmarks must be met to ensure its quality and reliability. These criteria collectively ensure the product meets the required quality standards before progressing to distribution. These include:
+
+1. **Test Case Coverage:**
+
+  - Achieve a minimum of 80% test case coverage across all identified features and functionalities before concluding the testing phase.
+  - This guarantees that nearly all components of the software have undergone thorough testing.
+
+2. **Bug Resolution Rate:**
+
+  - 100% of reported 'High' and 'Medium' severity bugs must be resolved before the testing phase is considered complete.
+  - At least 80% of 'Low' severity bugs must also be addressed before exiting the testing phase.
+  - This requirement prioritizes fixing critical issues to improve the software's overall stability and reliability.
+
+3. **Documentation Completeness:**
+
+  - All relevant documentation—such as test plans, test cases, test results, functional and technical specifications—must be fully completed and reviewed.
+  - Documentation should be clear, comprehensive and accessible to the entire team, ensuring everyone has a solid understanding of the testing procedures and results.
 
 ## 3-Test-Strategy
+Here's the purpose of our testing strategy: <br> 
+  - We will implement **[Unit Tests](#unit-tests)** to ensure the quality of the code. <br> 
+  - We will perform **[Testing sessions](#collaborative-game-testing)** to ensure that the documented quality of the project is up-to-date. <br> 
+  - We will use **[External tools](#d-test-tool)** to help us testing the product.
 
 ### a-Testing-Scope
+The two main things to test during this project will be the documents and the game itself.<br>
+About the documents, it's paramount to ensure their quality, so that communication with users is clear and the whole team can work on the same basis. <br>
+Not only will we check the documents for grammatical and typographical errors, but also the content itself, to ensure that no crucial points have been overlooked or erroneous elements introduced into the document.
 
 ### b-Testing-Type
-
+We will operate [unit tests](#unit-tests), [functional tests](#functional-tests) and [collaborative game testing](#collaborative-game-testing) to ensure the quality of the project.
 #### Unit-Tests
+Unit testing is an important part of the process. These tests will be written by the Software Engineers throughout the project, in parallel with project development. Then, the Quality Assurance will run these tests during tests cases. <br>
+
+**These unit tests serve three crucial objectives:**
+
+1. **Code Functionality:** Verify that each function performs as expected under various scenarios. 
+
+2. **Code Quality:** Assess the clarity and quality of the code to promote maintainability and ease of collaboration among developers. 
+
+3. **Code Coverage:** Guarantee comprehensive testing to prevent future changes from unintentionally altering the original behavior of the code.
 
 #### Functional-Tests
+Functional tests consists in palying the game and looking for bugs by testing every events (exemple of an event: moving to the left) within the game.
 
 #### Collaborative-Game-Testing
-Collaborative Game Testing consist in making random people play our game and report each bug.
+Collaborative Game Testing consist in making people play our game and report each bug.
 
 ### c-Define-Priorities
+Priorities are given to determine which test has to be done first. <br>
+There will be 4 explicit priorities:
+- Critical
+- High
+- Medium
+- Low
 
 ### d-Test-Tool
+Test tools are what we will use to test the quality and the functionality of the code.
+#### System-VERILOG
+System VERILOG is a programing language used for VERILOG simulation. It permits us to test functions by setting inputs and looking at outputs.
 
-#### EDA-Playground-System-VERILOG
-System VERILOG is a programing language used for VERILOG simulation. It permits us to test functions by setting inputs and looking at outputs.<br>
+#### EDA-Playground
 [EDA Playground](https://www.edaplayground.com/) is a web site with an integrated testing environment using VERILOG and System VERILOG.
 
 ### e-Test-Cases
+To document and track easily test cases, their results, and overall testing progress, the tests would be divided into these three sections:
 
-### f-Bug-Reports
+**Test Case Pattern:** 
 
-#### By-QA's
+We have to make a certain pattern for test cases to ensure the readability and consistency of the work:
 
-#### By-Users
+![test case pattern](Images/test_case_pattern.png)
+For further details, refer to the [test case](/TestCases.md) document.
+
+### f-Test-Reports
+**Test reports Pattern:**
+
+We also have to make a certain pattern for test reports to ensure the readability and consistency of the work:
+
+![test report pattern](Images/test_report_pattern.png)
+For further details, refer to the [test report](/TestReports.md) document.
+
+### g-Test-Progression
+**Progression:**
+  - **Test Amount Representation:**
+     - A visual schema representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
+     - Provides a visual snapshot of the overall testing status. <br><br>
+     ![Progression Pattern](Images/progression_graph.png)
+
+You can see all tests on the [test spreadsheet](https://docs.google.com/spreadsheets/d/1XLz-dlMtIxBoBo31umZ3qVMH6ERHfQd5tnZYNTitfoE/edit?usp=sharing).
+---
 
 ## 4-Schedule-Estimation
 | Task | Start Date (dd/mm/yyyy) | End Date (dd/mm/yyyy) |
 | ---- | ---- | ---- |
-| Review the documentation | 23/09/2024 | 21/10/2024 |
 | Create and give templates | 23/09/2024 | 20/10/2024 |
+| Review the documentation | 23/09/2024 | 21/10/2024 |
 | GitHub Actions | 23/09/2024 | 21/10/2024 |
 | Unit tests | 16/10/2024 | 20/10/2024 |
 | Functional tests | 16/10/2024 | 20/10/2024 |
@@ -131,9 +199,7 @@ System VERILOG is a programing language used for VERILOG simulation. It permits 
 - **Bug reports:** report all the bugs that have been found during the tests.
 - **Bug data report:** to have a global view of the bugs that have been found during the tests.
 
-## 6-Conclusion-and-Acknowledgements
-
-## 7-Glossary
+## 6-Glossary
 | Word | Definition | Source |
 | --- | --- | --- |
 | <a id="1">[1]</a>: FPGA | Short of Field Programmable Gate Array, it is a type of configurable integrated circuit that can be repeatedly programmed after manufacturing. | [wikipedia.org](https://en.wikipedia.org/wiki/Field-programmable_gate_array) |
