@@ -188,6 +188,10 @@ This fourth week was dedicated to finish the other documentations and the code b
 | Pack de 60 petits aimants | 2 | 4.79 | 9.58 | 20% | 1.20 | 5.99 | 11.98 |
 | Pack de 150 feuilles autocollantes | 1 | 23.12 | 23.12 | 20% | 5.78 | 28.90 | 28.90 |
 
+| Total HT (€) | Total TTC (€) |
+| ----- | ----- |
+| 124.18 | 177.76 |
+
 ## Plan for Next Week
 
 1. **Finish the code base**
