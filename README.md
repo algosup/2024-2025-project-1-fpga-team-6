@@ -30,11 +30,11 @@ Once you've setup the software, all you need is [download our project](https://g
 
 Then, if the board is correctly plugged and connected to a VGA monitor, the game will launch!
 
-## LILYPAD 🪷
+## Lilypad 🪷
 
 <img src="https://github.com/user-attachments/assets/befc4c72-095f-45d0-859c-b51b0a666d6f" alt="image" width="300"/>
 
-LILYPAD is a console we've made beside the Frogger game.
+Lilypad is a console we've made beside the Frogger game. The Go-Board contains the game you want to play, you put it correctly inside the console, and it's plug & play!
 
 <img src="https://github.com/user-attachments/assets/d96765b0-d3ef-49bd-872d-a85155195fe2" alt="image" width="300"/>
 
