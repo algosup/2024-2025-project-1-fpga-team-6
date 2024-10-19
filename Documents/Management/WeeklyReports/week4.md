@@ -14,7 +14,7 @@ This fourth week was dedicated to finish the other documentations and the code b
 ## Challenges
 
 1. **Trade-off decisions**
-    - The technology limitations have caused the team to make trade-offs. The river mechanics in the second half of the screen have therefore been replaced by another road.
+    - The technology limitations have caused the team to make trade-offs. The river mechanics in the second half of the screen have therefore been replaced by another road. Also, only a few cars will be displayed at any one time, reducing consumption and enhancing playability.
 2. **Side productions overwhelming**
     - The side productions have been quite overwhelming. All the team members did not focus on the same tasks at the same time, leading the team members to work harder.
 3. **Purchases**
@@ -45,4 +45,5 @@ This fourth week was dedicated to finish the other documentations and the code b
 
 ## Conclusion
 
-The week has been quite productive, allowing us to approximately finish all the tasks we had to do. The last task to perform will be the final presentation on the Friday 25th.
+The week has been quite productive, allowing us to approximately finish all the tasks we had to do, even if the FPGA's limitations have been quite tough to deal with.
+The last task to perform will be the final presentation on the Friday 25th.
