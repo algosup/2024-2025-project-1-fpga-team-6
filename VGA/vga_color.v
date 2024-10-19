@@ -9,9 +9,9 @@ module vga_color(
 );
 
     // Extraction des bits pour chaque canal couleur
-    wire [2:0] red = color[8:6];   // 3 bits pour rouge
-    wire [2:0] green = color[5:3]; // 3 bits pour vert
-    wire [2:0] blue = color[2:0];  // 3 bits pour bleu
+    wire [2:0] red = color[5:4];   // 3 bits pour rouge
+    wire [2:0] green = color[3:2]; // 3 bits pour vert
+    wire [2:0] blue = color[1:0];  // 3 bits pour bleu
 
     // Expansion des 3 bits à 8 bits pour l'affichage VGA (simple extension)
     assign vga_r = (video_on) ? {red, red[2:0], red[2:1]} : 8'b0;

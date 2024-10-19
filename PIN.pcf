@@ -72,10 +72,10 @@ set_io -nowarn VGA_B[2]  42
 #    | 3v3  3v3 |
 #     ----------
 #
-set_io -nowarn PMOD1   65
-set_io -nowarn PMOD2   64
-set_io -nowarn PMOD3   63
-set_io -nowarn PMOD4   62
+set_io -nowarn pMOD1   62
+set_io -nowarn pMOD2   65
+set_io -nowarn pMOD3   63
+set_io -nowarn pMOD4   64
 set_io -nowarn PMOD7   78
 set_io -nowarn PMOD8   79
 set_io -nowarn PMOD9   80
