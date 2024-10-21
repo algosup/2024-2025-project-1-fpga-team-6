@@ -363,7 +363,7 @@ Enemies will be generated at pseudo-random intervals. The generation logic will 
 graph TD
     A[Initialize Enemy Position] --> B[Move Enemy]
     B --> C[Is Enemy Off Screen?]
-    C --> |No| D[Continue Moving]
+    C --> |No| B
     C --> |Yes| E[Reposition Enemy to Opposite Side]
     E --> F[Update Enemy Position]
     F --> B
@@ -448,7 +448,7 @@ graph TD
     B --> C[Is Level is a Multiple of 3?]
     C --> |Yes| E[Increase Enemy Speed By 5%]
     E --> F[Update Level Display]
-    C --> |No| G[Do Nothing]
+    C --> |No| F
 ```
 
 ## IV. Console Technical Specifications
