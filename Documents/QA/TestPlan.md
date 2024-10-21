@@ -6,12 +6,12 @@
 ## Test-Plan-Approval
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Project Manager | Enzo GUILLOUCHE	|----------|--/10/2024|
-| Program Manager | Evan UHRING	|----------|--/10/2024|
-| Technical Lead | Maxime Caron |----------|--/10/2024|
-| Software Developer | Elone Delille |----------|--/10/2024|
-| Technical Writer | Pierre GORIN	|----------|--/10/2024|
-| Quality Assurance | Axel David |----------|--/10/2024|
+| Project Manager | Enzo GUILLOUCHE	| --- |21/10/2024|
+| Program Manager | Evan UHRING	| --- |21/10/2024|
+| Technical Lead | Maxime Caron | --- |21/10/2024|
+| Software Developer | Elone Delille | --- |21/10/2024|
+| Technical Writer | Pierre GORIN	| --- |21/10/2024|
+| Quality Assurance | Axel David |✅|21/10/2024|
 ## Table-of-Contents
 <details open>
 <summary>Table of Contents</summary>
