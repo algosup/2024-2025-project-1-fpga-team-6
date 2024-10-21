@@ -91,4 +91,4 @@ Team 6 involves few coworkers, handling different roles:
 - [Technical specifications](./Documents/TechnicalSpecifications/technicalSpecifications.md)
 - [3D Models](./3DModels/)
 - [Test Plan](./Documents/TestPlan/testPlan.md)
-- [User Manual](./Documents/UserManual/userManual.md)
+- [User Manuals](./Documents/Manuals/)
