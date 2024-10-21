@@ -90,5 +90,5 @@ Team 6 involves few coworkers, handling different roles:
 - [Functional specifications](./Documents/FunctionalSpecifications/functionalSpecifications.md)
 - [Technical specifications](./Documents/TechnicalSpecifications/technicalSpecifications.md)
 - [3D Models](./3DModels/)
-- [Test Plan](./Documents/TestPlan/testPlan.md)
+- [Quality Assurance Documentation](./Documents/QA/)
 - [User Manuals](./Documents/Manuals/)
