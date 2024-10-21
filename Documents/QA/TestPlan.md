@@ -56,7 +56,7 @@
 We were tasked to recreate the game Frogger using an FPGA<sup><a href="#1">[1]</a></sup> using the verilog<sup><a href="#2">[2]</a></sup> language.
 
 ### b-Targetted-Audience
-According to the types of players, our Frogger will have differents requierements.<br>
+According to the types of players, our Frogger will have different requierements.<br>
 <i>Take a look at personas definition in [functional specification](https://github.com/algosup/2024-2025-project-1-fpga-team-6/blob/main/Documents/FunctionalSpecifications/functionalSpecifications.md#4-personas-definition) for more informations</i>
 
 #### Retro-Gaming-Player
@@ -80,7 +80,7 @@ Verilog is the programming language we will use to program on FPGAs.
 <br><i>Take a look at verilog<sup><a href="#2">[2]</a></sup> in the glossary for more details.</i>
 
 ## 2-Test-Criteria
-we use test criteria to know what the Quality Assurance will have to test.
+We use test criteria to know what the Quality Assurance will have to test.
 
 #### Critical-Bugs
 Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encounter, we will suspend the tests until the bug is resolved.
@@ -92,7 +92,7 @@ Critical bugs are bugs that prevent the game from working properly and from impl
 <i>You can look at the tests and tested functions [here](https://docs.google.com/spreadsheets/d/1XLz-dlMtIxBoBo31umZ3qVMH6ERHfQd5tnZYNTitfoE/edit?usp=sharing).</i>
 
 #### Unit-Tests-Entry-Criteria
-Every functions of the game will have to be tested.
+Every function of the game will have to be tested.
 
 ### c-Exit-Criteria
 Before the product is deemed ready for distribution, several key benchmarks must be met to ensure its quality and reliability. These criteria collectively ensure the product meets the required quality standards before progressing to distribution. These include:

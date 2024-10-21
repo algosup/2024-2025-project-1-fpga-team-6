@@ -2,17 +2,11 @@
 
 | ID | Date  |  Priority | Description                                  | Steps     | Expected Results                                                | Status    |Comment                   |
 | -- | --- | -------- |------------------------------------------------------------------------------------------ | ------ | --------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- |
-| 01/001 | 01/01/1970 | HIGH | check function works | run the program | displays "Hello World" | Passed | The function works perfectly |
+| 01/001 | 01/01/1970 | HIGH | check if frog is displayed | run the program | displays the frog | Passed | The function works perfectly |
 
 **ID**<br>
 The ID of the test case. It will follow a certain pattern: 
 - The first numbers are the version of the tested product -> `01`/001<br>
-The versions are:
-    - 01 = the 1st parser
-    - 02 = the 2nd parser
-    - 03 = the builder
-    - 04 = the bin exporter
-    - 05 = the virtual processor
 - The last numbers are the number of the test -> 01/`001`
 
 **Date**<br>
@@ -25,15 +19,14 @@ The priority level of the test case (High, Medium, Low)
 - Low: An issue about a non-required feature needs to be fixed.
 
 **Description** <br>
-A clear and concise description of what the test deals with. If the Priority is 'High', the tester needs to precise what the piece of code that has been tested is.
+A clear and concise description of what the test deals with.
 
 **Steps**<br>
 Conditions applied during testing, add some steps to reproduce the behavior:
 
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Click on '....'
+2. Go to '....'
+3. See error
 
 **Expected results**<br>
 A clear and concise description of what you expected to happen.
@@ -45,4 +38,4 @@ The current status of the test case (Passed, Failed, In Progress, Not Implemente
 **Comment**<br>
 Add any other context about the problem here (recommended, especially for 'Failed' status).
 
-## You can go the [spreadsheet](https://docs.google.com/spreadsheets/d/1XLz-dlMtIxBoBo31umZ3qVMH6ERHfQd5tnZYNTitfoE/edit?usp=sharing) where the test reports will be documented.
+## You can go the [spreadsheet](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing) where the test reports will be documented.
