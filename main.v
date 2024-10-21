@@ -399,6 +399,15 @@ module main(
                 r_previous_direction <= 4;
         end
 
+        // Reset if 4 switches are pressed
+        if (r_SW1 == 1'b0 && r_SW2 == 1'b0 && r_SW3 == 1'b0 && r_SW4 == 1'b0) begin
+            frog_x_pos <= 10;
+            frog_y_pos <= 14;
+            r_CurrentNumber <= 0;
+            r_previous_direction <= 1;
+            CAR_SPEED <= 166667;
+        end
+
         // Check collision for each car
         check_collision(car_x_pos[0], car_y_pos[0]);
         check_collision(car_x_pos[1], car_y_pos[1]);
