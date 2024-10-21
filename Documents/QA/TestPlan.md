@@ -57,10 +57,10 @@ We were tasked to recreate the game Frogger using an FPGA<sup><a href="#1">[1]</
 
 ### b-Targetted-Audience
 According to the types of players, our Frogger will have different requierements.<br>
-<i>Take a look at personas definition in [functional specification](https://github.com/algosup/2024-2025-project-1-fpga-team-6/blob/main/Documents/FunctionalSpecifications/functionalSpecifications.md#4-personas-definition) for more informations</i>
+<i>Take a look at personas definition in [functional specification](https://github.com/algosup/2024-2025-project-1-fpga-team-6/blob/main/Documents/FunctionalSpecifications/functionalSpecifications.md#4-personas-definition) for more information</i>
 
 #### Retro-Gaming-Player
-What retro players need is a game that works just fine and that allows them to feels the sentation of old games.
+What retro players need is a game that works just fine and that allows them to feel the sentation of old games.
 
 #### New-Player
 What new players need is a working game that let them experience the game without the risk of any issues coming from the game.
@@ -83,7 +83,7 @@ Verilog is the programming language we will use to program on FPGAs.
 We use test criteria to know what the Quality Assurance will have to test.
 
 #### Critical-Bugs
-Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encounter, we will suspend the tests until the bug is resolved.
+Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encountered, we will suspend the tests until the bug is resolved.
 
 ### b-Entry-Criteria
 #### Functional-Tests-Entry-Criteria
@@ -157,7 +157,7 @@ Test tools are what we will use to test the quality and the functionality of the
 System VERILOG is a programing language used for VERILOG simulation. It permits us to test functions by setting inputs and looking at outputs.
 
 #### EDA-Playground
-[EDA Playground](https://www.edaplayground.com/) is a web site with an integrated testing environment using VERILOG and System VERILOG.
+[EDA Playground](https://www.edaplayground.com/) is a website with an integrated testing environment using VERILOG and System VERILOG.
 
 ### e-Test-Cases
 To document and track easily test cases, their results, and overall testing progress, the tests would be divided into these three sections:
@@ -180,7 +180,7 @@ For further details, refer to the [test report](/TestReports.md) document.
 ### g-Test-Progression
 **Progression:**
   - **Test Amount Representation:**
-     - A visual schema representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
+     - A visual scheme representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
      - Provides a visual snapshot of the overall testing status.
 
 ## You can see all tests on the [test spreadsheet](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing).
