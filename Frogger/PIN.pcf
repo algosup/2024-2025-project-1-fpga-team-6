@@ -1,0 +1,82 @@
+# ------------ User Leds ------------------------------------------------------
+set_io -nowarn o_LED_1  56
+set_io -nowarn o_LED_2  57
+set_io -nowarn o_LED_3  59
+set_io -nowarn o_LED_4  60
+
+# ------------ User push-buttons ----------------------------------------------
+set_io -nowarn i_SW1  53
+set_io -nowarn i_SW2  51
+set_io -nowarn i_SW3  54
+set_io -nowarn i_SW4  52
+
+# ------------ 7 segments -----------------------------------------------------
+set_io -nowarn S1_A 3
+set_io -nowarn S1_B 4
+set_io -nowarn S1_C 93
+set_io -nowarn S1_D 91
+set_io -nowarn S1_E 90
+set_io -nowarn S1_F 1
+set_io -nowarn S1_G 2
+
+set_io -nowarn S2_A 100
+set_io -nowarn S2_B 99
+set_io -nowarn S2_C 97
+set_io -nowarn S2_D 95
+set_io -nowarn S2_E 94
+set_io -nowarn S2_F 8
+set_io -nowarn S2_G 96
+
+# -------------------------- SYSTEM CLOCK ------------------------------------
+set_io -nowarn i_CLK 15
+
+# -------------------------- UART --------------------------------------------
+set_io -nowarn RX  73
+set_io -nowarn TX  74
+
+# -------------------------- VGA ---------------------------------------------
+set_io -nowarn VGA_HS  26
+set_io -nowarn VGA_VS  27
+set_io -nowarn VGA_R[0]  36
+set_io -nowarn VGA_R[1]  37
+set_io -nowarn VGA_R[2]  40
+set_io -nowarn VGA_G[0]  29
+set_io -nowarn VGA_G[1]  30
+set_io -nowarn VGA_G[2]  33
+set_io -nowarn VGA_B[0]  28
+set_io -nowarn VGA_B[1]  41
+set_io -nowarn VGA_B[2]  42
+
+
+# ------------ PMOD connector ------------------------------------------------
+#
+#   Pmod standar numeration
+#
+#      --------
+#    >| 1   7 |
+#     | 2   8 |
+#     | 3   9 |
+#     | 4  10 |
+#     | 5  11 |
+#     | 6  12 |
+#      --------
+#
+#   FPGA pins:
+#
+#     ----------
+#   >| 65    78 |
+#    | 64    79 |
+#    | 63    80 |
+#    | 62    81 |
+#    | GND  GND |
+#    | 3v3  3v3 |
+#     ----------
+#
+set_io -nowarn pMOD1   62
+set_io -nowarn pMOD2   65
+set_io -nowarn pMOD3   63
+set_io -nowarn pMOD4   64
+set_io -nowarn PMOD7   78
+set_io -nowarn PMOD8   79
+set_io -nowarn PMOD9   80
+set_io -nowarn PMOD10  81
