@@ -2,17 +2,20 @@
 |Authors|Axel David|
 |---|---|
 |Created|23/09/2024|
-|Last Modified|10/10/2024|
+|Last Modified|21/10/2024|
 ## Test-Plan-Approval
 | Role | Name | Signature | Date |
 |---|---|---|---|
-| Project Manager | Enzo GUILLOUCHE	|----------|--/10/2024|
-| Program Manager | Evan UHRING	|----------|--/10/2024|
-| Technical Lead | Maxime Caron |----------|--/10/2024|
-| Software Developer | Elone Delille |----------|--/10/2024|
-| Technical Writer | Pierre GORIN	|----------|--/10/2024|
-| Quality Assurance | Axel David |----------|--/10/2024|
+| Project Manager | Enzo GUILLOUCHE	| --- |21/10/2024|
+| Program Manager | Evan UHRING	| --- |21/10/2024|
+| Technical Lead | Maxime Caron | --- |21/10/2024|
+| Software Developer | Elone Delille | --- |21/10/2024|
+| Technical Writer | Pierre GORIN	| --- |21/10/2024|
+| Quality Assurance | Axel David |✅|21/10/2024|
 ## Table-of-Contents
+<details open>
+<summary>Table of Contents</summary>
+
 - [Test Plan](#test-plan)
   - [Test Plan Approval](#test-plan-approval)
   - [Table of Contents](#table-of-contents)
@@ -46,18 +49,18 @@
   - [4. Schedule Estimation](#4-schedule-estimation)
   - [5. Test Deliverables](#5-test-deliverables)
   - [6. Glossary](#6-glossary)
+</details>
 
 ## 1-Introduction
-[comment]: <> ( 3    6    )
 ### a-Overview
 We were tasked to recreate the game Frogger using an FPGA<sup><a href="#1">[1]</a></sup> using the verilog<sup><a href="#2">[2]</a></sup> language.
 
 ### b-Targetted-Audience
-According to the types of players, our Frogger will have differents requierements.<br>
-<i>Take a look at personas definition in [functional specification](https://github.com/algosup/2024-2025-project-1-fpga-team-6/blob/main/Documents/FunctionalSpecifications/functionalSpecifications.md#4-personas-definition) for more informations</i>
+According to the types of players, our Frogger will have different requierements.<br>
+<i>Take a look at personas definition in [functional specification](https://github.com/algosup/2024-2025-project-1-fpga-team-6/blob/main/Documents/FunctionalSpecifications/functionalSpecifications.md#4-personas-definition) for more information</i>
 
 #### Retro-Gaming-Player
-What retro players need is a game that works just fine and that allows them to feels the sentation of old games.
+What retro players need is a game that works just fine and that allows them to feel the sentation of old games.
 
 #### New-Player
 What new players need is a working game that let them experience the game without the risk of any issues coming from the game.
@@ -77,10 +80,10 @@ Verilog is the programming language we will use to program on FPGAs.
 <br><i>Take a look at verilog<sup><a href="#2">[2]</a></sup> in the glossary for more details.</i>
 
 ## 2-Test-Criteria
-we use test criteria to know what the Quality Assurance will have to test.
+We use test criteria to know what the Quality Assurance will have to test.
 
 #### Critical-Bugs
-Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encounter, we will suspend the tests until the bug is resolved.
+Critical bugs are bugs that prevent the game from working properly and from implementing new features before resolving those bugs. If a critical bug is encountered, we will suspend the tests until the bug is resolved.
 
 ### b-Entry-Criteria
 #### Functional-Tests-Entry-Criteria
@@ -89,7 +92,7 @@ Critical bugs are bugs that prevent the game from working properly and from impl
 <i>You can look at the tests and tested functions [here](https://docs.google.com/spreadsheets/d/1XLz-dlMtIxBoBo31umZ3qVMH6ERHfQd5tnZYNTitfoE/edit?usp=sharing).</i>
 
 #### Unit-Tests-Entry-Criteria
-Every functions of the game will have to be tested.
+Every function of the game will have to be tested.
 
 ### c-Exit-Criteria
 Before the product is deemed ready for distribution, several key benchmarks must be met to ensure its quality and reliability. These criteria collectively ensure the product meets the required quality standards before progressing to distribution. These include:
@@ -154,7 +157,7 @@ Test tools are what we will use to test the quality and the functionality of the
 System VERILOG is a programing language used for VERILOG simulation. It permits us to test functions by setting inputs and looking at outputs.
 
 #### EDA-Playground
-[EDA Playground](https://www.edaplayground.com/) is a web site with an integrated testing environment using VERILOG and System VERILOG.
+[EDA Playground](https://www.edaplayground.com/) is a website with an integrated testing environment using VERILOG and System VERILOG.
 
 ### e-Test-Cases
 To document and track easily test cases, their results, and overall testing progress, the tests would be divided into these three sections:
@@ -177,12 +180,10 @@ For further details, refer to the [test report](/TestReports.md) document.
 ### g-Test-Progression
 **Progression:**
   - **Test Amount Representation:**
-     - A visual schema representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
-     - Provides a visual snapshot of the overall testing status. <br><br>
-     ![Progression Pattern](////Images/progression_graph.png)
+     - A visual scheme representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
+     - Provides a visual snapshot of the overall testing status.
 
 ## You can see all tests on the [test spreadsheet](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing).
-
 
 ## 4-Schedule-Estimation
 | Task | Start Date (dd/mm/yyyy) | End Date (dd/mm/yyyy) |
@@ -210,3 +211,5 @@ For further details, refer to the [test report](/TestReports.md) document.
 | <a id="6">[6]</a>: SEGA | It is a japanese corporation focused on the video game business. | [sega.com](https://www.sega.com/homepage) |
 | <a id="7">[7]</a>: sprite | In computer graphics, it is a two dimensional map used to texture models of a 2D game. | [wikipedia.org](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)) |
 | <a id='8'>[8]</a>: The Go Board|The Go Board is a low-cost, beginner-friendly FPGA development board.|[nandland](https://nandland.com/the-go-board/)|
+
+<i>The glossary is the same as the functional one you can find [here](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing)</i>
