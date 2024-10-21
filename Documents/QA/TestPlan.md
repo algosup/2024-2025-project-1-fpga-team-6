@@ -2,7 +2,7 @@
 |Authors|Axel David|
 |---|---|
 |Created|23/09/2024|
-|Last Modified|10/10/2024|
+|Last Modified|21/10/2024|
 ## Test-Plan-Approval
 | Role | Name | Signature | Date |
 |---|---|---|---|
@@ -13,6 +13,9 @@
 | Technical Writer | Pierre GORIN	|----------|--/10/2024|
 | Quality Assurance | Axel David |----------|--/10/2024|
 ## Table-of-Contents
+<details open>
+<summary>Table of Contents</summary>
+
 - [Test Plan](#test-plan)
   - [Test Plan Approval](#test-plan-approval)
   - [Table of Contents](#table-of-contents)
@@ -46,9 +49,9 @@
   - [4. Schedule Estimation](#4-schedule-estimation)
   - [5. Test Deliverables](#5-test-deliverables)
   - [6. Glossary](#6-glossary)
+</details>
 
 ## 1-Introduction
-[comment]: <> ( 3    6    )
 ### a-Overview
 We were tasked to recreate the game Frogger using an FPGA<sup><a href="#1">[1]</a></sup> using the verilog<sup><a href="#2">[2]</a></sup> language.
 
@@ -178,11 +181,9 @@ For further details, refer to the [test report](/TestReports.md) document.
 **Progression:**
   - **Test Amount Representation:**
      - A visual schema representing the test reports based on the amount of their status (Passed, Failed, In Progress, Not Implemented).
-     - Provides a visual snapshot of the overall testing status. <br><br>
-     ![Progression Pattern](////Images/progression_graph.png)
+     - Provides a visual snapshot of the overall testing status.
 
 ## You can see all tests on the [test spreadsheet](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing).
-
 
 ## 4-Schedule-Estimation
 | Task | Start Date (dd/mm/yyyy) | End Date (dd/mm/yyyy) |
@@ -210,3 +211,5 @@ For further details, refer to the [test report](/TestReports.md) document.
 | <a id="6">[6]</a>: SEGA | It is a japanese corporation focused on the video game business. | [sega.com](https://www.sega.com/homepage) |
 | <a id="7">[7]</a>: sprite | In computer graphics, it is a two dimensional map used to texture models of a 2D game. | [wikipedia.org](https://en.wikipedia.org/wiki/Sprite_(computer_graphics)) |
 | <a id='8'>[8]</a>: The Go Board|The Go Board is a low-cost, beginner-friendly FPGA development board.|[nandland](https://nandland.com/the-go-board/)|
+
+<i>The glossary is the same as the functional one you can find [here](https://docs.google.com/spreadsheets/d/1MwYGwoQ63a64xy0Dyt1VcTHsDguLzddWgrrDPDT4RYE/edit?usp=sharing)</i>
