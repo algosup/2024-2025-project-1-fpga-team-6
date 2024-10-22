@@ -23,10 +23,15 @@ To play the game, you'll need to have some <u>required elements</u>:
 - A [VGA cable](https://www.amazon.com./s?k=vga+cable&crid=1N29E5VSJS1W4&sprefix=vga%2Caps%2C199&ref=nb_sb_ss_ts-doa-p_2_3)
 - A [micro-USB cable](https://www.amazon.com./s?k=micro-usb+cable&crid=L7H96RRAM5DF&sprefix=micro-us%2Caps%2C158&ref=nb_sb_ss_ts-doa-p_2_8)
 
+### macOS Setup
+
 Then, you'll need to setup apio on your machine. 
 To do this, follow the steps on this [link](https://nandland.com/set-up-apio-fpga-build-and-program/).
 
-Once you've setup the software, all you need is [download our project](https://github.com/algosup/2024-2025-project-1-fpga-team-6/releases), connect the board to your computer with the micro-USB cable and upload it into the board using the `apio upload` command on your terminal. (make sure you're in the project's folder!)
+Once you've setup the software, all you need is 
+- [download our latest release](https://github.com/algosup/2024-2025-project-1-fpga-team-6/releases)
+- connect the board to your computer with the micro-USB cable
+- upload it into the board using the `apio upload` command on your terminal (make sure you're in the Frogger folder!)
 
 Then, if the board is correctly plugged and connected to a VGA monitor, the game will launch!
 
