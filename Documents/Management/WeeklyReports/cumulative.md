@@ -29,6 +29,12 @@
   - [Challenges](#challenges-3)
   - [Plan for Next Week](#plan-for-next-week-3)
   - [Conclusion](#conclusion-3)
+- [Weekly Report - Week 5](#weekly-report---week-5)
+  - [Overview](#overview-4)
+  - [Accomplishments](#accomplishments-4)
+  - [Challenges](#challenges-4)
+  - [Plan for Next Week](#plan-for-next-week-4)
+  - [Conclusion](#conclusion-4)
 
 </details>
 
@@ -202,3 +208,34 @@ This fourth week was dedicated to finish the other documentations and the code b
 
 The week has been quite productive, allowing us to approximately finish all the tasks we had to do, even if the FPGA's limitations have been quite tough to deal with.
 The last task to perform will be the final presentation on the Friday 25th.
+
+---
+
+# Weekly Report - Week 5
+
+## Overview
+
+This week was dedicated to prepare the final presentation, as well as finish ohter productions.
+
+## Accomplishments
+
+1. **Presentation preparation**
+    - All team members managed to prepare the presentation effectively.
+2. **Productions finished**
+    - All other productions have been successfully finished.
+
+## Challenges
+
+1. **Presentation deadlines**
+    - The final presentation is done on the Friday. We had a small week to prepare it.
+2. **Other productions**
+    - The fact that we had to finish completely the other productions could be messy with the presentation.
+
+## Plan for Next Week
+
+1. **Post-mortem**
+    - Performing a post-mortem of a prject will be useful to know what we could have done better and improve ourselves.
+
+## Conclusion
+
+Performing a final presentation of a project can be stressful, so we did prepare it effectively. We'll need to do a post-mortem after the presentation.
