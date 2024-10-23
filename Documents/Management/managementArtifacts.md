@@ -10,6 +10,7 @@ This document aims to centralize all the management artifact links and resources
       - [Documents](#documents)
       - [Development](#development)
     - [Link to the project's KPIs](#link-to-the-projects-kpis)
+  - [Post-Mortem](#post-mortem)
   - [Weekly reports](#weekly-reports)
 
 ## RACI Matrix
@@ -74,6 +75,19 @@ This section tracks the following KPIs:
 ### Link to the project's KPIs
 
 You can see our project's KPIs which were explained above following [this link](https://docs.google.com/spreadsheets/d/1pW0lcJmaklLvV69xaQg9A9HL7gVH3gwBpeU3l1J2H7I/edit?usp=sharing).
+
+## Post-Mortem
+
+This post-mortem has been filled in on Friday 25/10/24, just after performing the final presentation.
+
+| Person | What you learned | Problem encountered | How do you handle it | What to improve | What you liked | What you don't liked | What are you proud |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Enzo (SCRUM Master) | - | - | - | - | - | - | - |
+| Evan | - | - | - | - | - | - | - |
+| Maxime | - | - | - | - | - | - | - |
+| Elone | - | - | - | - | - | - | - |
+| Axel | - | - | - | - | - | - | - |
+| Pierre | - | - | - | - | - | - | - |
 
 ## Weekly reports
 
