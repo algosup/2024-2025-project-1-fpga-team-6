@@ -33,7 +33,7 @@
   - [Overview](#overview-4)
   - [Accomplishments](#accomplishments-4)
   - [Challenges](#challenges-4)
-  - [Plan for Next Week](#plan-for-next-week-4)
+  - [What's Next](#whats-next)
   - [Conclusion](#conclusion-4)
 
 </details>
@@ -231,10 +231,10 @@ This week was dedicated to prepare the final presentation, as well as finish oht
 2. **Other productions**
     - The fact that we had to finish completely the other productions could be messy with the presentation.
 
-## Plan for Next Week
+## What's Next
 
 1. **Post-mortem**
-    - Performing a post-mortem of a prject will be useful to know what we could have done better and improve ourselves.
+    - Performing a post-mortem of a pr0ject will be useful to know what we could have done better and improve ourselves.
 
 ## Conclusion
 

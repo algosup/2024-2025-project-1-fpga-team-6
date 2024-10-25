@@ -18,10 +18,10 @@ This week was dedicated to prepare the final presentation, as well as finish oht
 2. **Other productions**
     - The fact that we had to finish completely the other productions could be messy with the presentation.
 
-## Plan for Next Week
+## What's Next
 
 1. **Post-mortem**
-    - Performing a post-mortem of a prject will be useful to know what we could have done better and improve ourselves.
+    - Performing a post-mortem of a project will be useful to know what we could have done better and improve ourselves.
 
 ## Conclusion
 
