@@ -122,8 +122,8 @@ Here are the milestones according to the deliverables:
 
 ### Budget
 
-As we're tying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
-All the pruchases will be endorsed by the team members at first.
+As we're trying to go beyond the project expectations, by building a experience with the game, some purchases will probably occur during the project.
+All the purchases will be endorsed by the team members at first.
 
 | Item                                   | Quantity | Unit Price TTC (€) | Total TTC (€) |
 |----------------------------------------|----------|----------------|-----------|
@@ -148,7 +148,7 @@ All the pruchases will be endorsed by the team members at first.
 | Pack de 60 petits aimants | 2 | 4.79 | 9.58 | 20% | 1.20 | 5.99 | 11.98 |
 | Pack de 150 feuilles autocollantes | 1 | 23.12 | 23.12 | 20% | 5.78 | 28.90 | 28.90 |
 
-**[Last Update: 2024/10/2]**
+**[Last Update: 2024/10/21]**
 The total cost of the project is <u>255.42 Euros TTC</u>.
 
 ### Payment Plan
